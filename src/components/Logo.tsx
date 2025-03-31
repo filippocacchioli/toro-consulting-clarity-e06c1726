@@ -14,7 +14,7 @@ const Logo = ({ size = 'medium', className = '' }: LogoProps) => {
   };
 
   return (
-    <div className={`relative ${sizes[size]} ${className}`}>
+    <div className={`relative rounded-full overflow-hidden ${sizes[size]} ${className}`}>
       <img 
         src="/lovable-uploads/4de519b5-19f9-45bb-86fc-c492222e0851.png" 
         alt="TORO Consulting Logo" 

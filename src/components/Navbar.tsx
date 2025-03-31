@@ -30,7 +30,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-white/90 backdrop-blur-md shadow-lg py-5'}`}>
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           <Link to="/" className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Home</Link>
-          <Link to="/chi-siamo" className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Chi Siamo</Link>
+          <Link to="/chi-sono" className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Chi Sono</Link>
           <Link to="/servizi" className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Servizi</Link>
           <Link to="/blog" className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Blog</Link>
           <Link to="/contatti" className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Contatti</Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
       <div className={`fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`} style={{top: '0', paddingTop: '4rem'}}>
         <div className="flex flex-col space-y-6 p-8">
           <Link to="/" className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors" onClick={closeMenu}>Home</Link>
-          <Link to="/chi-siamo" className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors" onClick={closeMenu}>Chi Siamo</Link>
+          <Link to="/chi-sono" className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors" onClick={closeMenu}>Chi Sono</Link>
           <Link to="/servizi" className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors" onClick={closeMenu}>Servizi</Link>
           <Link to="/blog" className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors" onClick={closeMenu}>Blog</Link>
           <Link to="/contatti" className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors" onClick={closeMenu}>Contatti</Link>
