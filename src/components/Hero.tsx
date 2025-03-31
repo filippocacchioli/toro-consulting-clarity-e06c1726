@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-toro-dark/95 via-toro-dark/90 to-toro-dark-light/90"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1634542984003-e0fb8e200e91?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=90')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1493962853295-0fd70327578a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=90')] bg-cover bg-center"></div>
       </div>
       
       <div className="container-custom relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -21,7 +21,7 @@ const Hero = () => {
             </h2>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
-            Libera il Potenziale del Tuo Capitale con Consulenza Finanziaria Indipendente
+            Crescita Finanziaria: Sblocca il Potenziale del Tuo Patrimonio
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white font-medium drop-shadow-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Piani su misura, zero conflitti d'interesse. Massimizza i tuoi investimenti con strategie trasparenti.

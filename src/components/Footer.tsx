@@ -43,7 +43,7 @@ const Footer = () => {
             <h3 className="text-lg font-medium mb-6">Collegamenti Rapidi</h3>
             <ul className="space-y-4">
               <li><Link to="/" className="text-gray-300 hover:text-toro-gold transition-colors">Home</Link></li>
-              <li><Link to="/chi-siamo" className="text-gray-300 hover:text-toro-gold transition-colors">Chi Siamo</Link></li>
+              <li><Link to="/chi-sono" className="text-gray-300 hover:text-toro-gold transition-colors">Chi Sono</Link></li>
               <li><Link to="/servizi" className="text-gray-300 hover:text-toro-gold transition-colors">Servizi</Link></li>
               <li><Link to="/blog" className="text-gray-300 hover:text-toro-gold transition-colors">Blog</Link></li>
               <li><Link to="/contatti" className="text-gray-300 hover:text-toro-gold transition-colors">Contatti</Link></li>

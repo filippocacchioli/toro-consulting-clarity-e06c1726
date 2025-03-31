@@ -1,9 +1,7 @@
-
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Mail, Phone, MapPin, Clock, Shield, Send, Check } from 'lucide-react';
-import Logo from '../components/Logo';
 
 const Contatti = () => {
   const [formData, setFormData] = useState({
@@ -27,11 +25,9 @@ const Contatti = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     console.log('Form submitted:', formData);
     setSubmitted(true);
     
-    // Reset form after 5 seconds
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
@@ -48,7 +44,6 @@ const Contatti = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Section */}
         <section className="py-20 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
           <div className="container-custom text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Contattaci</h1>
@@ -59,7 +54,6 @@ const Contatti = () => {
           </div>
         </section>
 
-        {/* Contact Form and Info */}
         <section className="py-20 bg-white">
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -245,7 +239,6 @@ const Contatti = () => {
           </div>
         </section>
         
-        {/* Certifications and Trust Signals */}
         <section className="py-16 bg-gray-50">
           <div className="container-custom">
             <h2 className="text-2xl font-serif font-medium mb-8 text-center text-toro-dark">Certificazioni e Affiliazioni</h2>
@@ -276,11 +269,6 @@ const Contatti = () => {
                   className="h-16 mx-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
                 />
                 <p className="text-sm text-gray-600 mt-2">Membro NAFOP</p>
-              </div>
-              
-              <div className="text-center">
-                <Logo size="medium" className="mx-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
-                <p className="text-sm text-gray-600 mt-2">TORO Consulting</p>
               </div>
             </div>
           </div>

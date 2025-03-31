@@ -17,7 +17,7 @@ const ChiSono = () => {
               <div className="md:w-1/2">
                 <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Chi Sono</h1>
                 <p className="text-xl mb-6">
-                  "Aiuto le persone come te a raggiungere la libertà finanziaria attraverso piani d'investimento etici e trasparenti."
+                  "Aiutiamo le persone come te a raggiungere la libertà finanziaria attraverso piani d'investimento efficaci e trasparenti."
                 </p>
                 <div className="flex items-center">
                   <Logo size="small" className="mr-3" />
@@ -46,42 +46,47 @@ const ChiSono = () => {
                 <h2 className="section-title">Il Mio Percorso</h2>
                 <div className="prose max-w-none text-gray-700">
                   <p className="text-lg font-medium mb-6">
-                    Experienced Manager con un solido background in ruoli di Vendita e Operativi nella Supply Chain.
-                    Profondamente orientato al cliente, guidato da una mentalità analitica e basata sui processi,
-                    bilancio competenze tecniche con competenze manageriali e di leadership. Altamente orientato ai risultati e molto curioso.
+                    Manager d'azienda esperto: +18 anni di esperienza con forte background in ruoli chiave di Vendita e Operations.
+                    Profondamente orientato al cliente e guidato da una mentalità analitica e basata sui processi, bilancio competenze tecniche con competenze manageriali e di leadership.
+                    Ho a che fare quotidianamente con problematiche reali proprio come te, il mio approccio alla tua consulenza sarà quindi pragmatico, sintetico ed efficace!
                   </p>
                   
                   <h3 className="text-xl font-medium text-toro-dark mt-8 mb-4">Esperienze Lavorative</h3>
                   
                   <div className="mb-8 border-l-4 border-toro-gold pl-6">
+                    <h4 className="text-lg font-medium text-toro-dark mb-2">Consulente finanziario indipendente</h4>
+                    <p className="mb-2">Iscrizione all'Albo OCF n°123456</p>
+                  </div>
+                  
+                  <div className="mb-8 border-l-4 border-toro-gold pl-6">
                     <h4 className="text-lg font-medium text-toro-dark mb-2">District Manager</h4>
                     <ul className="list-disc list-inside space-y-2 mb-4">
-                      <li>District business organization</li>
-                      <li>District Profit & Loss responsibility</li>
-                      <li>Customers Accountability</li>
-                      <li>Operations Management</li>
-                      <li>Turnover: 50 mln€</li>
-                      <li>People Managed: +300</li>
-                      <li>Customers: 20 Top International Brands in several FMCG</li>
-                      <li>Business Development: customer scouting, tender management, preparing offers, integration processes supervision</li>
-                      <li>Customer Service Manager: office organization and processes/activities re-design</li>
+                      <li>Organizzazione aziendale del distretto</li>
+                      <li>Responsabilità di profitti e perdite del distretto</li>
+                      <li>Responsabilità verso i clienti</li>
+                      <li>Gestione operativa</li>
+                      <li>Fatturato: 50 mln€</li>
+                      <li>Persone gestite: +300</li>
+                      <li>Clienti: 20 marchi internazionali di primo piano in diversi settori FMCG</li>
+                      <li>Sviluppo del business: ricerca clienti, gestione gare, preparazione offerte, supervisione processi di integrazione</li>
+                      <li>Responsabile servizio clienti: organizzazione ufficio e riprogettazione processi/attività</li>
                     </ul>
                   </div>
                   
                   <div className="mb-8 border-l-4 border-toro-gold pl-6">
-                    <h4 className="text-lg font-medium text-toro-dark mb-2">Real Estate Development</h4>
+                    <h4 className="text-lg font-medium text-toro-dark mb-2">Sviluppo Immobiliare</h4>
                     <ul className="list-disc list-inside space-y-2 mb-4">
-                      <li>Real Estate technical and economic feasibility analysis (urban planning, economic, mortgage, legal, cadastral, etc.) in order to open new stores and modernize existing ones.</li>
-                      <li>Marketing analysis and competitor research.</li>
-                      <li>Negotiations and contracts management with Entrepreneurial, Credit Institutions and Public Administrations for property purchase or rental procedures.</li>
-                      <li>Acquisition and supervision of necessary authorizations for sales</li>
-                      <li>Stores maintenance supervisor</li>
+                      <li>Analisi di fattibilità tecnica ed economica immobiliare (urbanistica, economica, ipotecaria, legale, catastale, ecc.) per aprire nuovi negozi e modernizzare quelli esistenti.</li>
+                      <li>Analisi di marketing e ricerca concorrenti.</li>
+                      <li>Gestione di negoziazioni e contratti con imprenditori, istituti di credito e amministrazioni pubbliche per procedure di acquisto o locazione di immobili.</li>
+                      <li>Acquisizione e supervisione delle autorizzazioni necessarie per la vendita.</li>
+                      <li>Supervisore della manutenzione dei negozi.</li>
                     </ul>
                   </div>
                   
                   <div className="mb-8 border-l-4 border-toro-gold pl-6">
                     <h4 className="text-lg font-medium text-toro-dark mb-2">Ingegnere software sviluppo e ricerca - Sony Ericsson</h4>
-                    <p className="mb-2">Reporting to the R&D manager: data transmission protocol design and development</p>
+                    <p className="mb-2">Riporto al responsabile R&D: progettazione e sviluppo del protocollo di trasmissione dati</p>
                   </div>
                 </div>
               </div>
