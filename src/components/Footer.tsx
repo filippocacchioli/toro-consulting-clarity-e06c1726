@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-6">
-              <div className="h-10 w-10 rounded-full bg-toro-gold flex items-center justify-center text-white font-serif text-lg font-bold mr-2">T</div>
+              <Logo size="small" className="mr-3" />
               <div className="text-xl font-serif font-medium text-white">
                 TORO Consulting
               </div>

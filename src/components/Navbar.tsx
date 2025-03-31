@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,7 +34,7 @@ const Navbar = () => {
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <div className="h-12 w-12 rounded-full bg-toro-gold flex items-center justify-center text-white font-serif text-xl font-bold mr-2">T</div>
+          <Logo size="medium" className="mr-3" />
           <div className="text-2xl font-serif font-medium">
             <span className="text-toro-dark">TORO</span>
             <span className="text-toro-gold"> Consulting</span>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 const Hero = () => {
   return (
@@ -13,6 +14,12 @@ const Hero = () => {
       
       <div className="container-custom relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-white">
+          <div className="flex items-center mb-8 animate-fade-in">
+            <Logo size="large" className="mr-4" />
+            <h2 className="text-3xl font-serif font-bold text-toro-gold">
+              TORO Consulting
+            </h2>
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight animate-fade-in">
             Libera il Potenziale del Tuo Capitale con Consulenza Finanziaria Indipendente
           </h1>

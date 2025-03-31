@@ -63,10 +63,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom TORO Consulting colors
+				// Custom TORO Consulting colors - refined to match the logo
 				toro: {
 					gold: '#D4AF37',
 					'gold-light': '#E9D182',
+					'gold-dark': '#B38728',
 					dark: '#1A1F2C',
 					'dark-light': '#2D3548',
 					gray: '#8E9196',
