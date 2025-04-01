@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-6">
-              <Logo size="small" className="mr-3" />
+              <Logo size="medium" className="mr-3" />
               <div className="text-xl font-serif font-medium text-white">
                 TORO Consulting
               </div>
@@ -53,11 +53,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-medium mb-6">Servizi</h3>
             <ul className="space-y-4">
-              <li><Link to="/servizi/pianificazione-patrimoniale" className="text-gray-300 hover:text-toro-gold transition-colors">Pianificazione Patrimoniale</Link></li>
-              <li><Link to="/servizi/gestione-portafogli" className="text-gray-300 hover:text-toro-gold transition-colors">Gestione Portafogli</Link></li>
-              <li><Link to="/servizi/investimento-oro" className="text-gray-300 hover:text-toro-gold transition-colors">Investimento in Oro</Link></li>
-              <li><Link to="/servizi/crypto-asset-digitali" className="text-gray-300 hover:text-toro-gold transition-colors">Crypto e Asset Digitali</Link></li>
-              <li><Link to="/servizi/educazione-coaching" className="text-gray-300 hover:text-toro-gold transition-colors">Educazione & Coaching</Link></li>
+              <li><Link to="/servizi#pianificazione" className="text-gray-300 hover:text-toro-gold transition-colors">Pianificazione Patrimoniale</Link></li>
+              <li><Link to="/servizi#gestione" className="text-gray-300 hover:text-toro-gold transition-colors">Gestione Portafogli</Link></li>
+              <li><Link to="/servizi#oro" className="text-gray-300 hover:text-toro-gold transition-colors">Investimento in Oro</Link></li>
+              <li><Link to="/servizi#crypto" className="text-gray-300 hover:text-toro-gold transition-colors">Crypto e Asset Digitali</Link></li>
+              <li><Link to="/servizi#educazione" className="text-gray-300 hover:text-toro-gold transition-colors">Educazione & Coaching</Link></li>
             </ul>
           </div>
           

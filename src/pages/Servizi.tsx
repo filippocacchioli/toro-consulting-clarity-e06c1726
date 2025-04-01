@@ -1,11 +1,49 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { TrendingUp, Coins, LineChart, BookOpen, Clock, Target, ChartBar, Wallet, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Servizi = () => {
+  useEffect(() => {
+    // Add smooth scrolling with offset to account for the fixed navbar
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const targetId = target.getAttribute('href')?.slice(1);
+        const targetElement = document.getElementById(targetId || '');
+        
+        if (targetElement) {
+          const yOffset = -100; // Adjust this value to account for the navbar height
+          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    
+    // Handle direct navigation to a hash URL
+    if (window.location.hash) {
+      setTimeout(() => {
+        const targetId = window.location.hash.slice(1);
+        const targetElement = document.getElementById(targetId || '');
+        
+        if (targetElement) {
+          const yOffset = -100;
+          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 500);
+    }
+    
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+    };
+  }, []);
+  
   const services = [
     {
       icon: <TrendingUp className="h-16 w-16 text-toro-gold" />,
@@ -36,10 +74,8 @@ const Servizi = () => {
     {
       icon: (
         <svg className="h-16 w-16 text-toro-gold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 8H20V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V8Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.2"/>
-          <rect x="6" y="4" width="12" height="4" rx="1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.2"/>
-          <path d="M8 12H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M8 16H12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 3L4 7v10l8 4 8-4V7l-8-4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.2"/>
+          <path d="M6 9.5l6 3 6-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
       title: "Investimento in Oro",
@@ -200,7 +236,7 @@ const Servizi = () => {
                     <h3 className="text-2xl font-serif font-medium mb-4 text-toro-dark">{service.title}</h3>
                     <p className="text-lg text-gray-700 mb-6">{service.description}</p>
                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100 mb-6">
-                      <h4 className="text-lg font-medium mb-4 text-toro-dark">Cosa includo:</h4>
+                      <h4 className="text-lg font-medium mb-4 text-toro-dark">Cosa include:</h4>
                       <ul className="space-y-3">
                         {service.benefits.map((benefit, i) => (
                           <li key={i} className="flex items-start">
@@ -226,10 +262,10 @@ const Servizi = () => {
         {/* Fee Section */}
         <section id="fee" className="py-20 bg-white">
           <div className="container-custom">
-            <h2 className="section-title text-center mb-8">Le Mie Fee</h2>
+            <h2 className="section-title text-center mb-8">Le Nostre Fee</h2>
             <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12">
-              Opero con un modello di compenso trasparente e orientato ai risultati.
-              Tutte le mie fee sono concordate in anticipo e non ricevo commissioni da prodotti o società terze.
+              Operiamo con un modello di compenso trasparente e orientato ai risultati.
+              Tutte le nostre fee sono concordate in anticipo e non riceviamo commissioni da prodotti o società terze.
             </p>
             
             <div className="bg-gray-50 rounded-lg p-8 border border-gray-200 shadow-sm">
@@ -267,7 +303,7 @@ const Servizi = () => {
                 </table>
               </div>
               <p className="text-center mt-6 text-sm text-gray-500">
-                Tutte le fee sono trasparenti e concordate in anticipo. Non ricevo commissioni da terze parti.
+                Tutte le fee sono trasparenti e concordate in anticipo. Non riceviamo commissioni da terze parti.
               </p>
             </div>
             

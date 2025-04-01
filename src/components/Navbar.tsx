@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <Logo size="medium" className="mr-3" />
+          <Logo size="large" className="mr-3" />
           <div className="text-2xl font-serif font-medium">
             <span className="text-toro-dark">TORO</span>
             <span className="text-toro-gold"> Consulting</span>

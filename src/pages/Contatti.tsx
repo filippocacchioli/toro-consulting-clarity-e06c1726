@@ -47,10 +47,10 @@ const Contatti = () => {
       <main className="flex-grow">
         <section className="py-20 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
           <div className="container-custom text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Contattami</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Contattaci</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
-              Hai domande sulla tua situazione finanziaria? Sono qui per aiutarti.
-              Compila il modulo sottostante o contattami direttamente.
+              Hai domande sulla tua situazione finanziaria? Siamo qui per aiutarti.
+              Compila il modulo sottostante o contattaci direttamente.
             </p>
           </div>
         </section>
@@ -59,7 +59,7 @@ const Contatti = () => {
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
-                <h2 className="text-2xl font-serif font-medium mb-6 text-toro-dark">Inviami un messaggio</h2>
+                <h2 className="text-2xl font-serif font-medium mb-6 text-toro-dark">Inviaci un messaggio</h2>
                 
                 {submitted ? (
                   <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
@@ -68,7 +68,7 @@ const Contatti = () => {
                     </div>
                     <h3 className="text-xl font-medium text-green-800 mb-2">Messaggio Inviato!</h3>
                     <p className="text-green-700">
-                      Grazie per avermi contattato. Ti risponderò al più presto.
+                      Grazie per averci contattato. Ti risponderemo al più presto.
                     </p>
                   </div>
                 ) : (
@@ -198,7 +198,7 @@ const Contatti = () => {
                         Via Fornio 37<br />
                         43036 Fidenza (PR), Italia
                       </p>
-                      <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-toro-gold hover:underline">
+                      <a href="https://maps.google.com/maps?q=Strada+Comunale+per+Fornio,+37,+43036+Fidenza+PR,+Italy" target="_blank" rel="noopener noreferrer" className="text-toro-gold hover:underline">
                         Visualizza su Google Maps
                       </a>
                     </div>
@@ -230,7 +230,7 @@ const Contatti = () => {
                   </div>
                   <p className="text-gray-300 text-sm">
                     Tutti i dati forniti tramite questo modulo sono trattati in conformità con il GDPR e la normativa
-                    italiana sulla privacy. Non condivido le tue informazioni con terze parti.
+                    italiana sulla privacy. Non condividiamo le tue informazioni con terze parti.
                   </p>
                 </div>
               </div>
