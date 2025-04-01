@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-toro-dark/95 via-toro-dark/90 to-toro-dark-light/90"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1493962853295-0fd70327578a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=90')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/baf54ec7-8ac0-41e5-8b6b-c347ede16ed2.png')] bg-cover bg-center"></div>
       </div>
       
       <div className="container-custom relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -32,7 +32,7 @@ const Hero = () => {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             <Link to="/servizi" className="btn-outline flex items-center justify-center">
-              Scopri i nostri servizi
+              Scopri i miei servizi
             </Link>
           </div>
         </div>
@@ -47,7 +47,7 @@ const Hero = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-serif font-medium mb-2 text-white">Valuta la Tua Situazione Finanziaria</h3>
-              <p className="text-gray-300">Accedi al nostro check-up gratuito del portafoglio</p>
+              <p className="text-gray-300">Accedi al mio check-up gratuito del portafoglio</p>
             </div>
             
             <form className="space-y-4">

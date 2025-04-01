@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -46,10 +47,10 @@ const Contatti = () => {
       <main className="flex-grow">
         <section className="py-20 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
           <div className="container-custom text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Contattaci</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Contattami</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
-              Hai domande sulla tua situazione finanziaria? Siamo qui per aiutarti.
-              Compila il modulo sottostante o contattaci direttamente.
+              Hai domande sulla tua situazione finanziaria? Sono qui per aiutarti.
+              Compila il modulo sottostante o contattami direttamente.
             </p>
           </div>
         </section>
@@ -58,7 +59,7 @@ const Contatti = () => {
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
-                <h2 className="text-2xl font-serif font-medium mb-6 text-toro-dark">Inviaci un messaggio</h2>
+                <h2 className="text-2xl font-serif font-medium mb-6 text-toro-dark">Inviami un messaggio</h2>
                 
                 {submitted ? (
                   <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
@@ -67,7 +68,7 @@ const Contatti = () => {
                     </div>
                     <h3 className="text-xl font-medium text-green-800 mb-2">Messaggio Inviato!</h3>
                     <p className="text-green-700">
-                      Grazie per averci contattato. Ti risponderemo al più presto.
+                      Grazie per avermi contattato. Ti risponderò al più presto.
                     </p>
                   </div>
                 ) : (
@@ -231,7 +232,7 @@ const Contatti = () => {
                   </div>
                   <p className="text-gray-300 text-sm">
                     Tutti i dati forniti tramite questo modulo sono trattati in conformità con il GDPR e la normativa
-                    italiana sulla privacy. Non condividiamo le tue informazioni con terze parti.
+                    italiana sulla privacy. Non condivido le tue informazioni con terze parti.
                   </p>
                 </div>
               </div>
@@ -246,29 +247,38 @@ const Contatti = () => {
             <div className="flex flex-wrap justify-center items-center gap-12">
               <div className="text-center">
                 <img 
-                  src="https://placeholder.pics/svg/150x80/DEDEDE/555555/OCF" 
+                  src="https://upload.wikimedia.org/wikipedia/it/7/76/Logo_Organismo_Consulenti_Finanziari.png" 
                   alt="Organismo di vigilanza e tenuta dell'albo unico dei Consulenti Finanziari" 
-                  className="h-16 mx-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                  className="h-16 mx-auto hover:opacity-100 transition-all"
                 />
                 <p className="text-sm text-gray-600 mt-2">Albo OCF</p>
               </div>
               
               <div className="text-center">
                 <img 
-                  src="https://placeholder.pics/svg/150x80/DEDEDE/555555/CONSOB" 
+                  src="https://upload.wikimedia.org/wikipedia/it/9/98/Logo_Consob.png" 
                   alt="Commissione Nazionale per le Società e la Borsa" 
-                  className="h-16 mx-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                  className="h-16 mx-auto hover:opacity-100 transition-all"
                 />
                 <p className="text-sm text-gray-600 mt-2">Vigilanza CONSOB</p>
               </div>
               
               <div className="text-center">
                 <img 
-                  src="https://placeholder.pics/svg/150x80/DEDEDE/555555/NAFOP" 
-                  alt="Associazione dei Consulenti Finanziari Indipendenti" 
-                  className="h-16 mx-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                  src="https://www.gsom.polimi.it/wp-content/uploads/2019/11/logo-polimi-gsm-blu-1.png" 
+                  alt="POLIMI Graduate School of Management" 
+                  className="h-16 mx-auto hover:opacity-100 transition-all"
                 />
-                <p className="text-sm text-gray-600 mt-2">Membro NAFOP</p>
+                <p className="text-sm text-gray-600 mt-2">POLIMI Graduate School of Management</p>
+              </div>
+              
+              <div className="text-center">
+                <img 
+                  src="https://www.decinstitute.org/wp-content/uploads/2021/11/logo-dec-institute.svg" 
+                  alt="DEC Institute" 
+                  className="h-16 mx-auto hover:opacity-100 transition-all"
+                />
+                <p className="text-sm text-gray-600 mt-2">DEC Institute</p>
               </div>
             </div>
           </div>
