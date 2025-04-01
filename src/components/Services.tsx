@@ -8,13 +8,13 @@ const Services = () => {
     {
       icon: <TrendingUp className="h-12 w-12 text-toro-gold" />,
       title: "Pianificazione Patrimoniale",
-      description: "Sviluppo strategie personalizzate per gestire e accrescere il tuo patrimonio nel lungo termine.",
+      description: "Sviluppiamo strategie personalizzate per gestire e accrescere il tuo patrimonio nel lungo termine.",
       link: "/servizi/pianificazione-patrimoniale"
     },
     {
       icon: <LineChart className="h-12 w-12 text-toro-gold" />,
       title: "Gestione Portafogli",
-      description: "Ottimizzo il tuo portafoglio con un approccio evidence-based e una diversificazione efficace.",
+      description: "Ottimizziamo il tuo portafoglio con un approccio evidence-based e una diversificazione efficace.",
       link: "/servizi/gestione-portafogli"
     },
     {
@@ -27,7 +27,7 @@ const Services = () => {
         </svg>
       ),
       title: "Investimento in Oro",
-      description: "Ti guido nell'acquisto, custodia e gestione fiscale dell'oro fisico come riserva di valore.",
+      description: "Ti guidiamo nell'acquisto, custodia e gestione fiscale dell'oro fisico come riserva di valore.",
       link: "/servizi/investimento-oro"
     },
     {
@@ -48,9 +48,9 @@ const Services = () => {
     <section className="py-20 bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="section-title">I Miei Servizi</h2>
+          <h2 className="section-title">I Nostri Servizi</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Offro una gamma completa di servizi di consulenza finanziaria indipendente per soddisfare le tue esigenze.
+            Offriamo una gamma completa di servizi di consulenza finanziaria indipendente per soddisfare le tue esigenze.
           </p>
         </div>
         
@@ -85,7 +85,7 @@ const Services = () => {
         </div>
 
         <div className="mt-16 bg-gray-50 rounded-lg p-8 border border-gray-200">
-          <h3 className="section-subtitle text-center mb-8">Le Mie Fee</h3>
+          <h3 className="section-subtitle text-center mb-8">Le Nostre Fee</h3>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse min-w-[600px]">
               <thead>
@@ -115,7 +115,7 @@ const Services = () => {
             </table>
           </div>
           <p className="text-center mt-6 text-sm text-gray-500">
-            Tutte le fee sono trasparenti e concordate in anticipo. Non ricevo commissioni da terze parti.
+            Tutte le fee sono trasparenti e concordate in anticipo. Non riceviamo commissioni da terze parti.
           </p>
         </div>
       </div>

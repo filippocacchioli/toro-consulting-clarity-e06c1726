@@ -183,10 +183,8 @@ const Contatti = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium mb-1 text-toro-dark">Telefono</h3>
-                      <p className="text-gray-700 mb-1">Ufficio:</p>
-                      <a href="tel:+390123456789" className="text-toro-gold hover:underline">+39 01 2345 6789</a>
-                      <p className="text-gray-700 mt-2 mb-1">Cellulare:</p>
-                      <a href="tel:+393334445566" className="text-toro-gold hover:underline">+39 333 444 5566</a>
+                      <p className="text-gray-700 mb-1">Cellulare:</p>
+                      <a href="tel:+393440164415" className="text-toro-gold hover:underline">+39 344 016 44 15</a>
                     </div>
                   </div>
                   
@@ -197,8 +195,8 @@ const Contatti = () => {
                     <div>
                       <h3 className="text-lg font-medium mb-1 text-toro-dark">Indirizzo</h3>
                       <p className="text-gray-700 mb-2">
-                        Via Roma 123<br />
-                        20123 Milano, Italia
+                        Via Fornio 37<br />
+                        43036 Fidenza (PR), Italia
                       </p>
                       <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-toro-gold hover:underline">
                         Visualizza su Google Maps

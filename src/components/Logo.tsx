@@ -16,7 +16,7 @@ const Logo = ({ size = 'medium', className = '' }: LogoProps) => {
   return (
     <div className={`relative rounded-full overflow-hidden ${sizes[size]} ${className}`}>
       <img 
-        src="/lovable-uploads/4de519b5-19f9-45bb-86fc-c492222e0851.png" 
+        src="/lovable-uploads/a55f00d3-7eb2-4d4b-a54b-90bf6902d2cc.png" 
         alt="TORO Consulting Logo" 
         className="w-full h-full object-contain"
       />

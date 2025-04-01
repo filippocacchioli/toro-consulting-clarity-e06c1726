@@ -28,7 +28,7 @@ const ChiSono = () => {
                 <div className="relative">
                   <div className="absolute -inset-0.5 bg-toro-gold rounded-full blur"></div>
                   <img 
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    src="/lovable-uploads/b675c65e-06b1-425f-b5f8-c63e4e322f59.png" 
                     alt="Fondatore TORO Consulting" 
                     className="rounded-full w-64 h-64 object-cover border-4 border-toro-gold relative"
                   />
@@ -46,7 +46,7 @@ const ChiSono = () => {
                 <h2 className="section-title">Il Mio Percorso</h2>
                 <div className="prose max-w-none text-gray-700">
                   <p className="text-lg font-medium mb-6">
-                    Dirigente d'Azienda innamorato della Finanza: +18 anni di esperienza con forte background in ruoli chiave di Vendita e Operations.
+                    Sono Filippo Cacchioli, Dirigente d'Azienda innamorato della Finanza: +18 anni di esperienza con forte background in ruoli chiave di Vendita e Operations.
                     Forte orientamento alle tematiche Economico/Finanziarie e al Cliente, sono guidato da una mentalità analitica basata su dati e processi.
                   </p>
                   <p className="text-lg font-medium mb-6 bg-toro-gold/10 p-4 border-l-4 border-toro-gold rounded">
@@ -101,34 +101,24 @@ const ChiSono = () => {
                   
                   <div className="space-y-6">
                     <div>
-                      <div className="text-sm text-gray-500">2022</div>
                       <div className="font-medium">POLIMI Graduate School of Management</div>
                       <div>Certification Program for Blockchain</div>
                       <div className="text-sm text-gray-600">Corso di Diploma con esame finale per ottenimento</div>
                     </div>
                     
                     <div>
-                      <div className="text-sm text-gray-500">2022</div>
                       <div className="font-medium">DEC Institute</div>
                       <div>Chartered Blockchain Expert I (CBX), Blockchain & DLT</div>
                     </div>
                     
                     <div>
-                      <div className="text-sm text-gray-500">2007</div>
                       <div className="font-medium">Politecnico di Milano</div>
                       <div>Master of Science Management, Economics and Industrial Engineering</div>
                     </div>
                     
                     <div>
-                      <div className="text-sm text-gray-500">2000</div>
                       <div className="font-medium">Politecnico di Milano</div>
                       <div>Bachelor in Telecommunication Engineering</div>
-                    </div>
-                    
-                    <div>
-                      <div className="text-sm text-gray-500">1995</div>
-                      <div className="font-medium">Liceo Scientifico</div>
-                      <div>High school, scientific subjects</div>
                     </div>
                   </div>
                 </div>

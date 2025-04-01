@@ -21,10 +21,10 @@ const Hero = () => {
             </h2>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
-            Crescita Finanziaria: Sblocca il Potenziale del Tuo Patrimonio
+            Diventa Manager del tuo patrimonio: trasforma i tuoi risparmi in tuoi dipendenti.
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white font-medium drop-shadow-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Piani su misura, zero conflitti d'interesse. Massimizza i tuoi investimenti con strategie trasparenti.
+            Piani su misura, zero conflitti d'interesse. Massimizziamo i tuoi investimenti con strategie trasparenti.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Link to="/contatti" className="btn-primary flex items-center justify-center">
@@ -32,7 +32,7 @@ const Hero = () => {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             <Link to="/servizi" className="btn-outline flex items-center justify-center">
-              Scopri i miei servizi
+              Scopri i nostri servizi
             </Link>
           </div>
         </div>
@@ -47,7 +47,7 @@ const Hero = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-serif font-medium mb-2 text-white">Valuta la Tua Situazione Finanziaria</h3>
-              <p className="text-gray-300">Accedi al mio check-up gratuito del portafoglio</p>
+              <p className="text-gray-300">Accedi al nostro check-up gratuito del portafoglio</p>
             </div>
             
             <form className="space-y-4">

@@ -30,9 +30,9 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         <ValueProposition />
+        <Differentiator />
         <FinancialCalculator />
         <ComparisonCalculator />
-        <Differentiator />
         <Services />
         <TestimonialSection />
         <FAQ />
@@ -43,7 +43,7 @@ const Index = () => {
       {/* Cookie Consent Banner */}
       <div className="fixed bottom-0 left-0 right-0 bg-toro-dark text-white p-4 flex flex-col md:flex-row justify-between items-center z-50">
         <p className="mb-4 md:mb-0 mr-4">
-          Questo sito utilizza i cookie per migliorare l'esperienza utente. Continuando a navigare, accetti la mia politica sui cookie.
+          Questo sito utilizza i cookie per migliorare l'esperienza utente. Continuando a navigare, accetti la nostra politica sui cookie.
         </p>
         <div className="flex space-x-4">
           <button className="bg-toro-gold text-white px-4 py-2 rounded hover:bg-toro-gold-light transition-colors">
