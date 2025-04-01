@@ -31,8 +31,8 @@ const Index = () => {
         <Hero />
         <ValueProposition />
         <Differentiator />
-        <FinancialCalculator />
         <ComparisonCalculator />
+        <FinancialCalculator />
         <Services />
         <TestimonialSection />
         <FAQ />

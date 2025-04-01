@@ -21,7 +21,7 @@ const Hero = () => {
             </h2>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
-            Diventa Manager del tuo patrimonio: trasforma i tuoi risparmi in tuoi dipendenti.
+            Diventa Manager del tuo Patrimonio: trasforma i tuoi Risparmi in tuoi Dipendenti.
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white font-medium drop-shadow-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Piani su misura, zero conflitti d'interesse. Massimizziamo i tuoi investimenti con strategie trasparenti.

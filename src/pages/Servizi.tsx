@@ -10,7 +10,7 @@ const Servizi = () => {
     {
       icon: <TrendingUp className="h-16 w-16 text-toro-gold" />,
       title: "Pianificazione Patrimoniale",
-      description: "Sviluppo strategie personalizzate per gestire e accrescere il tuo patrimonio nel lungo termine, tenendo conto dei tuoi obiettivi di vita, della tua tolleranza al rischio e del tuo orizzonte temporale.",
+      description: "Sviluppiamo strategie personalizzate per gestire e accrescere il tuo patrimonio nel lungo termine, tenendo conto dei tuoi obiettivi di vita, della tua tolleranza al rischio e del tuo orizzonte temporale.",
       benefits: [
         "Analisi approfondita della situazione finanziaria attuale",
         "Definizione degli obiettivi a breve, medio e lungo termine",
@@ -23,7 +23,7 @@ const Servizi = () => {
     {
       icon: <LineChart className="h-16 w-16 text-toro-gold" />,
       title: "Gestione Portafogli",
-      description: "Ottimizzo il tuo portafoglio con un approccio evidence-based e una diversificazione efficace, massimizzando i rendimenti in relazione al rischio e minimizzando i costi.",
+      description: "Ottimizziamo il tuo portafoglio con un approccio evidence-based e una diversificazione efficace, massimizzando i rendimenti in relazione al rischio e minimizzando i costi.",
       benefits: [
         "Asset allocation strategica basata sulla moderna teoria di portafoglio",
         "Diversificazione ottimale tra classi di attività, settori e aree geografiche",
@@ -43,7 +43,7 @@ const Servizi = () => {
         </svg>
       ),
       title: "Investimento in Oro",
-      description: "Ti guido nell'acquisto, custodia e gestione fiscale dell'oro fisico come riserva di valore e protezione contro l'inflazione.",
+      description: "Ti guidiamo nell'acquisto, custodia e gestione fiscale dell'oro fisico come riserva di valore e protezione contro l'inflazione.",
       benefits: [
         "Analisi sulla corretta allocazione dell'oro nel portafoglio",
         "Consulenza sull'acquisto di oro fisico vs strumenti finanziari",
@@ -88,9 +88,9 @@ const Servizi = () => {
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
           <div className="container-custom text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">I Miei Servizi</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">I Nostri Servizi</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
-              Offro una gamma completa di servizi di consulenza finanziaria indipendente, 
+              Offriamo una gamma completa di servizi di consulenza finanziaria indipendente, 
               studiati per supportarti in ogni aspetto della tua vita finanziaria.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-10">
@@ -121,10 +121,10 @@ const Servizi = () => {
           <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="section-title">Il Mio Approccio</h2>
+                <h2 className="section-title">Il Nostro Approccio</h2>
                 <p className="text-lg text-gray-700 mb-6">
-                  Come consulente finanziario indipendente, il mio unico obiettivo è tutelare i tuoi interessi. 
-                  Non vendo prodotti e non ricevo commissioni da terze parti.
+                  Come consulenti finanziari indipendenti, il nostro unico obiettivo è tutelare i tuoi interessi. 
+                  Non vendiamo prodotti e non riceviamo commissioni da terze parti.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -132,7 +132,7 @@ const Servizi = () => {
                       <Target className="h-6 w-6 text-toro-gold" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium mb-1">Orientato ai tuoi obiettivi</h3>
+                      <h3 className="text-lg font-medium mb-1">Orientati ai tuoi obiettivi</h3>
                       <p className="text-gray-600">Ogni piano è costruito intorno alle tue esigenze e ai tuoi sogni.</p>
                     </div>
                   </div>
@@ -141,7 +141,7 @@ const Servizi = () => {
                       <ChartBar className="h-6 w-6 text-toro-gold" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium mb-1">Basato su evidenze</h3>
+                      <h3 className="text-lg font-medium mb-1">Basati su evidenze</h3>
                       <p className="text-gray-600">Strategie supportate da ricerca accademica, non da opinioni o mode.</p>
                     </div>
                   </div>
@@ -151,7 +151,7 @@ const Servizi = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium mb-1">Orizzonte a lungo termine</h3>
-                      <p className="text-gray-600">Costruisco strategie sostenibili e orientate al lungo periodo.</p>
+                      <p className="text-gray-600">Costruiamo strategie sostenibili e orientate al lungo periodo.</p>
                     </div>
                   </div>
                 </div>
@@ -159,7 +159,7 @@ const Servizi = () => {
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm">
                   <Wallet className="h-10 w-10 text-toro-gold mb-4" />
-                  <h3 className="text-lg font-medium mb-2">100% Indipendente</h3>
+                  <h3 className="text-lg font-medium mb-2">100% Indipendenti</h3>
                   <p className="text-gray-600">Zero conflitti di interesse nella selezione degli investimenti</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm">
@@ -168,7 +168,7 @@ const Servizi = () => {
                   <p className="text-gray-600">Paghi solo per la consulenza, non per la vendita di prodotti</p>
                 </div>
                 <div className="col-span-2 bg-toro-gold/10 p-6 rounded-lg">
-                  <h3 className="text-lg font-medium mb-2 text-toro-dark">La mia missione</h3>
+                  <h3 className="text-lg font-medium mb-2 text-toro-dark">La nostra missione</h3>
                   <p className="text-gray-700">
                     Aiutarti a prendere decisioni finanziarie consapevoli, fornendoti gli strumenti 
                     e le conoscenze per costruire un patrimonio solido e duraturo.

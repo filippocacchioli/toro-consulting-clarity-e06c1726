@@ -47,10 +47,11 @@ const ChiSono = () => {
                 <div className="prose max-w-none text-gray-700">
                   <p className="text-lg font-medium mb-6">
                     Sono Filippo Cacchioli, Dirigente d'Azienda innamorato della Finanza: +18 anni di esperienza con forte background in ruoli chiave di Vendita e Operations.
+                    <br />
                     Forte orientamento alle tematiche Economico/Finanziarie e al Cliente, sono guidato da una mentalità analitica basata su dati e processi.
                   </p>
                   <p className="text-lg font-medium mb-6 bg-toro-gold/10 p-4 border-l-4 border-toro-gold rounded">
-                    <strong>Ho a che fare quotidianamente con problematiche pratiche proprio come te, il mio approccio alla TUA consulenza sarà quindi pragmatico, sintetico ed efficace... sicuramente non teorico e slegato dalla tua realtà!!!</strong>
+                    <strong>Ho a che fare quotidianamente con problematiche pratiche e non teoriche proprio come te, il mio approccio alla TUA consulenza sarà quindi pragmatico, sintetico ed efficace!</strong>
                   </p>
                   
                   <h3 className="text-xl font-medium text-toro-dark mt-8 mb-4">Esperienze Lavorative</h3>
