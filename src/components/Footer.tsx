@@ -1,10 +1,39 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Logo from './Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSectionNavigation = (path: string, sectionId: string) => {
+    // If we're already on the page, just scroll to the section
+    if (window.location.pathname === path) {
+      const targetElement = document.getElementById(sectionId);
+      if (targetElement) {
+        const yOffset = -100; // Adjust for navbar
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to the page first, then scroll to section after page load
+      navigate(path);
+      setTimeout(() => {
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+          const yOffset = -100;
+          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 300);
+    }
+  };
 
   return (
     <footer className="bg-toro-dark text-white">
@@ -42,22 +71,22 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-medium mb-6">Collegamenti Rapidi</h3>
             <ul className="space-y-4">
-              <li><Link to="/" className="text-gray-300 hover:text-toro-gold transition-colors">Home</Link></li>
-              <li><Link to="/chi-sono" className="text-gray-300 hover:text-toro-gold transition-colors">Chi Sono</Link></li>
-              <li><Link to="/servizi" className="text-gray-300 hover:text-toro-gold transition-colors">Servizi</Link></li>
-              <li><Link to="/blog" className="text-gray-300 hover:text-toro-gold transition-colors">Blog</Link></li>
-              <li><Link to="/contatti" className="text-gray-300 hover:text-toro-gold transition-colors">Contatti</Link></li>
+              <li><button onClick={() => handleNavigation('/')} className="text-gray-300 hover:text-toro-gold transition-colors">Home</button></li>
+              <li><button onClick={() => handleNavigation('/chi-sono')} className="text-gray-300 hover:text-toro-gold transition-colors">Chi Sono</button></li>
+              <li><button onClick={() => handleNavigation('/servizi')} className="text-gray-300 hover:text-toro-gold transition-colors">Servizi</button></li>
+              <li><button onClick={() => handleNavigation('/blog')} className="text-gray-300 hover:text-toro-gold transition-colors">Blog</button></li>
+              <li><button onClick={() => handleNavigation('/contatti')} className="text-gray-300 hover:text-toro-gold transition-colors">Contatti</button></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-lg font-medium mb-6">Servizi</h3>
             <ul className="space-y-4">
-              <li><Link to="/servizi#pianificazione" className="text-gray-300 hover:text-toro-gold transition-colors">Pianificazione Patrimoniale</Link></li>
-              <li><Link to="/servizi#gestione" className="text-gray-300 hover:text-toro-gold transition-colors">Gestione Portafogli</Link></li>
-              <li><Link to="/servizi#oro" className="text-gray-300 hover:text-toro-gold transition-colors">Investimento in Oro</Link></li>
-              <li><Link to="/servizi#crypto" className="text-gray-300 hover:text-toro-gold transition-colors">Crypto e Asset Digitali</Link></li>
-              <li><Link to="/servizi#educazione" className="text-gray-300 hover:text-toro-gold transition-colors">Educazione & Coaching</Link></li>
+              <li><button onClick={() => handleSectionNavigation('/servizi', 'pianificazione')} className="text-gray-300 hover:text-toro-gold transition-colors">Pianificazione Patrimoniale</button></li>
+              <li><button onClick={() => handleSectionNavigation('/servizi', 'gestione')} className="text-gray-300 hover:text-toro-gold transition-colors">Gestione Portafogli</button></li>
+              <li><button onClick={() => handleSectionNavigation('/servizi', 'oro')} className="text-gray-300 hover:text-toro-gold transition-colors">Investimento in Oro</button></li>
+              <li><button onClick={() => handleSectionNavigation('/servizi', 'crypto')} className="text-gray-300 hover:text-toro-gold transition-colors">Crypto e Asset Digitali</button></li>
+              <li><button onClick={() => handleSectionNavigation('/servizi', 'educazione')} className="text-gray-300 hover:text-toro-gold transition-colors">Educazione & Coaching</button></li>
             </ul>
           </div>
           
@@ -81,7 +110,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-gray-300">Via Fornio 37, 43036, Fidenza (PR)</span>
+                <a href="https://maps.google.com/?q=Strada+Comunale+per+Fornio,+37,+43036+Fidenza+PR,+Italy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-toro-gold transition-colors">Via Fornio 37, 43036, Fidenza (PR)</a>
               </li>
             </ul>
           </div>
@@ -93,9 +122,9 @@ const Footer = () => {
               &copy; {currentYear} TORO Consulting. Tutti i diritti riservati.
             </p>
             <div className="flex space-x-6">
-              <Link to="/privacy" className="text-gray-400 hover:text-toro-gold transition-colors">Privacy Policy</Link>
-              <Link to="/cookies" className="text-gray-400 hover:text-toro-gold transition-colors">Cookie Policy</Link>
-              <Link to="/terms" className="text-gray-400 hover:text-toro-gold transition-colors">Termini e Condizioni</Link>
+              <button onClick={() => handleNavigation('/privacy')} className="text-gray-400 hover:text-toro-gold transition-colors">Privacy Policy</button>
+              <button onClick={() => handleNavigation('/cookies')} className="text-gray-400 hover:text-toro-gold transition-colors">Cookie Policy</button>
+              <button onClick={() => handleNavigation('/terms')} className="text-gray-400 hover:text-toro-gold transition-colors">Termini e Condizioni</button>
             </div>
           </div>
         </div>
