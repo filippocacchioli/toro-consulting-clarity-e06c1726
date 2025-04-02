@@ -10,32 +10,32 @@ import {
 const FAQ = () => {
   const faqs = [
     {
-      question: "Che cosa fa un consulente finanziario indipendente?",
-      answer: "Un consulente finanziario indipendente, come me, offre consulenza personalizzata senza vendere prodotti finanziari. Vengo pagato direttamente dal cliente (fee-only) e non ricevo commissioni da banche o società di prodotto, eliminando così qualsiasi conflitto di interesse. Il mio unico obiettivo è tutelare al massimo i tuoi interessi e aiutarti a raggiungere i tuoi obiettivi finanziari."
+      question: "Che cosa fanno i consulenti finanziari indipendenti?",
+      answer: "I consulenti finanziari indipendenti, come noi, offrono consulenze personalizzate senza vendere prodotti finanziari. Veniamo pagati direttamente dai clienti (fee-only) e non riceviamo commissioni da banche o società di prodotto, eliminando così qualsiasi conflitto di interesse. Il nostro unico obiettivo è tutelare al massimo i tuoi interessi e aiutarti a raggiungere i tuoi obiettivi finanziari."
     },
     {
-      question: "Quali sono i vantaggi di una consulenza finanziaria indipendente?",
-      answer: "I principali vantaggi includono: 1) Totale assenza di conflitti di interesse, 2) Accesso a un'analisi oggettiva dell'intero mercato e non solo dei prodotti di una singola banca, 3) Piani d'investimento personalizzati basati sui tuoi obiettivi, 4) Maggiore trasparenza sui costi e sui rischi degli investimenti, 5) Consulenza continuativa che si adatta al cambiare della tua situazione personale."
+      question: "Quali sono i vantaggi delle consulenze finanziarie indipendenti?",
+      answer: "I principali vantaggi includono: 1) Totale assenza di conflitti di interesse, 2) Accesso ad analisi oggettive dell'intero mercato e non solo dei prodotti di una singola banca, 3) Piani d'investimento personalizzati basati sui tuoi obiettivi, 4) Maggiore trasparenza sui costi e sui rischi degli investimenti, 5) Consulenze continuative che si adattano al cambiare della tua situazione personale."
     },
     {
-      question: "Quanto costa il tuo servizio di consulenza?",
-      answer: "Il mio modello di compenso è completamente trasparente e basato su fee dirette. Per la consulenza continuativa, la tariffa parte da 1.500€/anno o una percentuale tra lo 0,5-1% del patrimonio gestito (con fee decrescenti all'aumentare del patrimonio). Per un piano finanziario una tantum, il costo varia da 500€ a 1.500€ in base alla complessità della situazione. Non ricevo alcuna commissione da prodotti finanziari, assicurativi o bancari."
+      question: "Quanto costano i vostri servizi di consulenza?",
+      answer: "I nostri modelli di compenso sono completamente trasparenti e basati su fee dirette. Per le consulenze continuative, le tariffe partono da 1.500€/anno o una percentuale tra lo 0,5-1% del patrimonio gestito (con fee decrescenti all'aumentare del patrimonio). Per piani finanziari una tantum, i costi variano da 500€ a 1.500€ in base alla complessità delle situazioni. Non riceviamo alcuna commissione da prodotti finanziari, assicurativi o bancari."
     },
     {
-      question: "Quali servizi specifici offri?",
-      answer: "Offro una gamma completa di servizi finanziari: pianificazione patrimoniale personalizzata, gestione di portafogli basata su evidenze scientifiche, consulenza per investimenti in oro fisico, consulenza specializzata su Bitcoin e crypto asset, education e coaching finanziario per aumentare la tua consapevolezza e autonomia decisionale."
+      question: "Quali servizi specifici offrite?",
+      answer: "Offriamo una gamma completa di servizi finanziari: pianificazioni patrimoniali personalizzate, gestioni di portafogli basate su evidenze scientifiche, consulenze per investimenti in oro fisico, consulenze specializzate su Bitcoin e crypto asset, education e coaching finanziario per aumentare la tua consapevolezza e autonomia decisionale."
     },
     {
-      question: "Come fai a garantire che i miei investimenti siano sicuri?",
-      answer: "Non detengo mai direttamente il tuo denaro o i tuoi strumenti finanziari. I tuoi asset rimangono depositati presso banche o broker regolamentati a tuo nome. Il mio ruolo è guidarti nella scelta degli investimenti più adatti e monitorarli nel tempo. Inoltre, privilegio strumenti finanziari semplici, trasparenti e a basso costo come ETF, che offrono una diversificazione naturale e riducono il rischio specifico."
+      question: "Come fate a garantire che i nostri investimenti siano sicuri?",
+      answer: "Non deteniamo mai direttamente il tuo denaro o i tuoi strumenti finanziari. I tuoi asset rimangono depositati presso banche o broker regolamentati a tuo nome. Il nostro ruolo è guidarti nella scelta degli investimenti più adatti e monitorarli nel tempo. Inoltre, privilegiamo strumenti finanziari semplici, trasparenti e a basso costo come ETF, che offrono una diversificazione naturale e riducono il rischio specifico."
     },
     {
-      question: "Qual è la differenza tra un consulente fee-only e un consulente bancario?",
-      answer: "Un consulente bancario è dipendente o agente di una banca e può consigliare solo i prodotti della sua banca, spesso percependo commissioni sulla vendita. Io, come consulente fee-only, vengo pagato esclusivamente da te e posso consigliarti qualsiasi prodotto disponibile sul mercato, selezionando quelli più efficienti e adatti alle tue esigenze, senza alcun incentivo a preferirne alcuni rispetto ad altri."
+      question: "Quali sono le differenze tra i consulenti fee-only e i consulenti bancari?",
+      answer: "I consulenti bancari sono dipendenti o agenti di una banca e possono consigliare solo i prodotti della loro banca, spesso percependo commissioni sulla vendita. Noi, come consulenti fee-only, veniamo pagati esclusivamente da te e possiamo consigliarti qualsiasi prodotto disponibile sul mercato, selezionando quelli più efficienti e adatti alle tue esigenze, senza alcun incentivo a preferirne alcuni rispetto ad altri."
     },
     {
-      question: "Cosa devo portare al primo appuntamento?",
-      answer: "Per massimizzare l'efficacia del primo incontro, è utile portare: 1) Un elenco dei tuoi obiettivi finanziari a breve, medio e lungo termine, 2) Gli estratti conto degli ultimi tre mesi dei tuoi investimenti attuali, 3) Dettagli sulle tue entrate e uscite mensili, 4) Informazioni su eventuali debiti (mutui, prestiti), 5) Documenti relativi a polizze assicurative esistenti. Questo mi permetterà di avere un quadro completo della tua situazione finanziaria."
+      question: "Cosa dobbiamo portare ai primi appuntamenti?",
+      answer: "Per massimizzare l'efficacia dei primi incontri, è utile portare: 1) Un elenco dei vostri obiettivi finanziari a breve, medio e lungo termine, 2) Gli estratti conto degli ultimi tre mesi dei vostri investimenti attuali, 3) Dettagli sulle vostre entrate e uscite mensili, 4) Informazioni su eventuali debiti (mutui, prestiti), 5) Documenti relativi a polizze assicurative esistenti. Questo ci permetterà di avere un quadro completo delle vostre situazioni finanziarie."
     }
   ];
 

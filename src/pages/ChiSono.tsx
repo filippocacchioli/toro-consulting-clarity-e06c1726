@@ -102,7 +102,7 @@ const ChiSono = () => {
                     </div>
                     
                     <div>
-                      <div className="font-medium">DEC Institute</div>
+                      <div className="font-medium">DEC Institute - Switzerland</div>
                       <div>Chartered Blockchain Expert I (CBX), Blockchain & DLT</div>
                     </div>
                     

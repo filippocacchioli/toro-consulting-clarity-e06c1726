@@ -7,9 +7,9 @@ const ValueProposition = () => {
     {
       icon: (
         <svg className="h-12 w-12 text-toro-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M10 10.5c-.8-.3-1.5-.8-2-1.3-1.4-1.4-1.4-3.6 0-5 1.4-1.4 3.6-1.4 5 0 .5.5 1 1.3 1.3 2" />
-          <path d="M14 13.5c.8.3 1.5.8 2 1.3 1.4 1.4 1.4 3.6 0 5-1.4 1.4-3.6 1.4-5 0-.5-.5-1-1.3-1.3-2" />
-          <path d="M16 8L8 16" />
+          <path d="M5 10l2-2m10 4l2-2m-4-4l-2 2m-8 8l-2 2" />
+          <circle cx="7.5" cy="7.5" r="2.5" />
+          <circle cx="16.5" cy="16.5" r="2.5" />
         </svg>
       ),
       title: "Indipendenza",
