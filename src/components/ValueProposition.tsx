@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { ChainBreak, Target, LineChart, BookOpen } from 'lucide-react';
+import { Link2Off, Target, LineChart, BookOpen } from 'lucide-react';
 
 const ValueProposition = () => {
   const values = [
     {
-      icon: <ChainBreak className="h-12 w-12 text-toro-gold" />,
+      icon: <Link2Off className="h-12 w-12 text-toro-gold" />,
       title: "Indipendenza",
       description: "Nessun legame con banche o prodotti finanziari. Le nostre raccomandazioni sono sempre nel tuo interesse."
     },
