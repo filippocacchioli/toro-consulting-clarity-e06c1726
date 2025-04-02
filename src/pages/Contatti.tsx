@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -49,17 +48,26 @@ const Contatti = () => {
           <div className="container-custom text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Contattaci</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
-              Hai domande sulla tua situazione finanziaria? Siamo qui per aiutarti.
-              Compila il modulo sottostante o contattaci direttamente.
+              Avete domande sulla vostra situazione finanziaria? Siamo qui per aiutarvi.
+              Compilate il modulo sottostante o contattateci direttamente.
             </p>
           </div>
         </section>
 
-        <section className="py-20 bg-white">
-          <div className="container-custom">
+        <section className="py-20 bg-white relative">
+          {/* Logo background overlay */}
+          <div className="absolute inset-0 flex justify-center items-center z-0 opacity-5 pointer-events-none">
+            <img 
+              src="/lovable-uploads/a55f00d3-7eb2-4d4b-a54b-90bf6902d2cc.png"
+              alt="TORO Consulting Logo Background"
+              className="w-2/3 max-w-3xl"
+            />
+          </div>
+          
+          <div className="container-custom relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
-                <h2 className="text-2xl font-serif font-medium mb-6 text-toro-dark">Inviaci un messaggio</h2>
+                <h2 className="text-2xl font-serif font-medium mb-6 text-toro-dark">Inviateci un messaggio</h2>
                 
                 {submitted ? (
                   <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
@@ -68,7 +76,7 @@ const Contatti = () => {
                     </div>
                     <h3 className="text-xl font-medium text-green-800 mb-2">Messaggio Inviato!</h3>
                     <p className="text-green-700">
-                      Grazie per averci contattato. Ti risponderemo al più presto.
+                      Grazie per averci contattato. Vi risponderemo al più presto.
                     </p>
                   </div>
                 ) : (
@@ -82,7 +90,7 @@ const Contatti = () => {
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-toro-gold"
-                        placeholder="Il tuo nome e cognome"
+                        placeholder="Il vostro nome e cognome"
                         required
                       />
                     </div>
@@ -96,7 +104,7 @@ const Contatti = () => {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-toro-gold"
-                        placeholder="La tua email"
+                        placeholder="La vostra email"
                         required
                       />
                     </div>
@@ -110,7 +118,7 @@ const Contatti = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-toro-gold"
-                        placeholder="Il tuo numero di telefono"
+                        placeholder="Il vostro numero di telefono"
                       />
                     </div>
                     
@@ -123,7 +131,7 @@ const Contatti = () => {
                         onChange={handleChange}
                         rows={6}
                         className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-toro-gold"
-                        placeholder="Scrivi qui il tuo messaggio..."
+                        placeholder="Scrivete qui il vostro messaggio..."
                         required
                       ></textarea>
                     </div>
@@ -152,7 +160,7 @@ const Contatti = () => {
                         type="submit"
                         className="inline-flex items-center justify-center w-full bg-toro-gold hover:bg-toro-gold-light text-white font-medium py-3 px-6 rounded-md transition-colors"
                       >
-                        Invia Messaggio
+                        Inviate Messaggio
                         <Send className="ml-2 h-5 w-5" />
                       </button>
                     </div>
@@ -198,8 +206,8 @@ const Contatti = () => {
                         Via Fornio 37<br />
                         43036 Fidenza (PR), Italia
                       </p>
-                      <a href="https://maps.google.com/maps?q=Strada+Comunale+per+Fornio,+37,+43036+Fidenza+PR,+Italy" target="_blank" rel="noopener noreferrer" className="text-toro-gold hover:underline">
-                        Visualizza su Google Maps
+                      <a href="https://maps.google.com/?q=Strada+Comunale+per+Fornio,+37,+43036+Fidenza+PR,+Italy" target="_blank" rel="noopener noreferrer" className="text-toro-gold hover:underline">
+                        Visualizzate su Google Maps
                       </a>
                     </div>
                   </div>
@@ -226,57 +234,13 @@ const Contatti = () => {
                 <div className="mt-12 bg-toro-dark text-white p-6 rounded-lg">
                   <div className="flex items-center mb-4">
                     <Shield className="h-5 w-5 mr-2 text-toro-gold" />
-                    <h3 className="text-lg font-medium">La tua privacy è importante</h3>
+                    <h3 className="text-lg font-medium">La vostra privacy è importante</h3>
                   </div>
                   <p className="text-gray-300 text-sm">
                     Tutti i dati forniti tramite questo modulo sono trattati in conformità con il GDPR e la normativa
-                    italiana sulla privacy. Non condividiamo le tue informazioni con terze parti.
+                    italiana sulla privacy. Non condividiamo le vostre informazioni con terze parti.
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <section className="py-16 bg-gray-50">
-          <div className="container-custom">
-            <h2 className="text-2xl font-serif font-medium mb-8 text-center text-toro-dark">Certificazioni e Affiliazioni</h2>
-            
-            <div className="flex flex-wrap justify-center items-center gap-12">
-              <div className="text-center">
-                <img 
-                  src="https://upload.wikimedia.org/wikipedia/it/7/76/Logo_Organismo_Consulenti_Finanziari.png" 
-                  alt="Organismo di vigilanza e tenuta dell'albo unico dei Consulenti Finanziari" 
-                  className="h-16 mx-auto hover:opacity-100 transition-all"
-                />
-                <p className="text-sm text-gray-600 mt-2">Albo OCF</p>
-              </div>
-              
-              <div className="text-center">
-                <img 
-                  src="https://upload.wikimedia.org/wikipedia/it/9/98/Logo_Consob.png" 
-                  alt="Commissione Nazionale per le Società e la Borsa" 
-                  className="h-16 mx-auto hover:opacity-100 transition-all"
-                />
-                <p className="text-sm text-gray-600 mt-2">Vigilanza CONSOB</p>
-              </div>
-              
-              <div className="text-center">
-                <img 
-                  src="https://www.gsom.polimi.it/wp-content/uploads/2019/11/logo-polimi-gsm-blu-1.png" 
-                  alt="POLIMI Graduate School of Management" 
-                  className="h-16 mx-auto hover:opacity-100 transition-all"
-                />
-                <p className="text-sm text-gray-600 mt-2">POLIMI Graduate School of Management</p>
-              </div>
-              
-              <div className="text-center">
-                <img 
-                  src="https://www.decinstitute.org/wp-content/uploads/2021/11/logo-dec-institute.svg" 
-                  alt="DEC Institute" 
-                  className="h-16 mx-auto hover:opacity-100 transition-all"
-                />
-                <p className="text-sm text-gray-600 mt-2">DEC Institute</p>
               </div>
             </div>
           </div>

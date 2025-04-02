@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -22,12 +21,11 @@ const Hero = () => {
       
       <div className="container-custom relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-white">
-          {/* Removed logo and text from here */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
             Diventa Manager del tuo Patrimonio: trasforma i tuoi Risparmi in tuoi Dipendenti.
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white font-medium drop-shadow-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Piani su misura, zero conflitti d'interesse. Massimizziamo i tuoi investimenti con strategie trasparenti.
+            Piani su misura, zero conflitti d'interesse. Massimizziamo i tuoi investimenti con strategie studiate semplici ed efficaci.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Link to="/contatti" className="btn-primary flex items-center justify-center">

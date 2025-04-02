@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -16,9 +15,8 @@ const ChiSono = () => {
               <div className="md:w-1/2">
                 <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Chi Sono</h1>
                 <p className="text-xl mb-6">
-                  "Aiuto le persone come te a raggiungere la libertà finanziaria attraverso piani d'investimento efficaci e trasparenti."
+                  "Aiuto le persone come TE a raggiungere la LIBERTÀ FINANZIARIA attraverso piani d'investimento efficaci e trasparenti."
                 </p>
-                {/* Removed logo and text from here */}
               </div>
               <div className="md:w-1/2 flex justify-center">
                 <div className="relative">
@@ -47,7 +45,7 @@ const ChiSono = () => {
                     Forte orientamento alle tematiche Economico/Finanziarie e al Cliente, sono guidato da una mentalità analitica basata su dati e processi.
                   </p>
                   <p className="text-lg font-medium mb-6 bg-toro-gold/10 p-4 border-l-4 border-toro-gold rounded">
-                    <strong>Ho a che fare quotidianamente con problematiche pratiche e non teoriche proprio come te, il mio approccio alla TUA consulenza sarà quindi pragmatico, sintetico ed efficace!</strong>
+                    <strong>Ho a che fare quotidianamente con problematiche pratiche e non teoriche proprio come TE, il mio approccio alla TUA consulenza sarà quindi pragmatico, sintetico ed efficace!</strong>
                   </p>
                   
                   <h3 className="text-xl font-medium text-toro-dark mt-8 mb-4">Esperienze Lavorative</h3>
@@ -136,7 +134,6 @@ const ChiSono = () => {
                   <li className="italic font-serif text-gray-700">Consulente Finanziario Autonomo, iscrizione Albo OCF n°123456</li>
                   <li className="italic font-serif text-gray-700">Chartered Blockchain Expert (CBX) Level I</li>
                   <li className="italic font-serif text-gray-700">Certification Program for Blockchain - POLIMI Graduate School of Management</li>
-                  <li className="italic font-serif text-gray-700">Advanced Financial Planning Certification</li>
                 </ul>
               </div>
               

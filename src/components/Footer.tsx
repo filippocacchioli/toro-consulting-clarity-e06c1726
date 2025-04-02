@@ -9,7 +9,7 @@ const Footer = () => {
 
   const handleNavigation = (path: string) => {
     navigate(path);
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const handleSectionNavigation = (path: string, sectionId: string) => {
@@ -19,7 +19,7 @@ const Footer = () => {
       if (targetElement) {
         const yOffset = -80; // Adjust for navbar
         const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'auto' });
+        window.scrollTo({ top: y, behavior: 'instant' });
       }
     } else {
       // Navigate to the page first, then scroll to section after page load
@@ -29,7 +29,7 @@ const Footer = () => {
         if (targetElement) {
           const yOffset = -80;
           const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'auto' });
+          window.scrollTo({ top: y, behavior: 'instant' });
         }
       }, 300);
     }
@@ -47,7 +47,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 mb-6">
-              Consulenza finanziaria indipendente per aiutarti a raggiungere i tuoi obiettivi con strategie trasparenti e personalizzate.
+              Consulenza finanziaria indipendente per aiutarti a raggiungere i tuoi obiettivi di libertà finanziaria e moltiplicare il tuo capitale.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.linkedin.com/in/filippo-cacchioli-041ab43/" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-toro-gold transition-colors">
@@ -68,7 +68,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div>
+          <div className="pl-4">
             <h3 className="text-lg font-medium mb-6">Collegamenti Rapidi</h3>
             <ul className="space-y-4">
               <li><button onClick={() => handleNavigation('/')} className="text-gray-300 hover:text-toro-gold transition-colors">Home</button></li>

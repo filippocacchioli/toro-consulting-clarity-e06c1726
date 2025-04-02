@@ -36,17 +36,17 @@ const Navbar = () => {
     
     // Check if we're already on the path, if so just scroll to top
     if (location.pathname === path) {
-      window.scrollTo({ top: 0, behavior: 'auto' });
+      window.scrollTo({ top: 0, behavior: 'instant' });
       return;
     }
     
     // Otherwise navigate and scroll to top
     navigate(path);
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-1' : 'bg-white/90 backdrop-blur-md shadow-lg py-2'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-0.5' : 'bg-white/90 backdrop-blur-md shadow-lg py-1'}`}>
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center" onClick={() => handleNavigation('/')}>
