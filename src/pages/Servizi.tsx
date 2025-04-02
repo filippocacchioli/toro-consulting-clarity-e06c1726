@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { TrendingUp, Coins, LineChart, BookOpen, Clock, Target, ChartBar, Wallet, Users } from 'lucide-react';
+import { TrendingUp, LineChart, BookOpen, Clock, Target, ChartBar, Wallet, Users, Bitcoin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Servizi = () => {
@@ -74,8 +74,9 @@ const Servizi = () => {
     {
       icon: (
         <svg className="h-16 w-16 text-toro-gold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 6h20v12H2V6z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.2"/>
-          <path d="M12 10c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2z" stroke="currentColor" strokeWidth="2" fill="currentColor" fillOpacity="0.2"/>
+          <rect x="3" y="6" width="18" height="12" rx="1" stroke="currentColor" strokeWidth="2" fill="currentColor" fillOpacity="0.2" />
+          <rect x="6" y="9" width="4" height="6" rx="1" fill="currentColor" />
+          <rect x="14" y="9" width="4" height="6" rx="1" fill="currentColor" />
         </svg>
       ),
       title: "Investimento in Oro",
@@ -90,7 +91,7 @@ const Servizi = () => {
       link: "/servizi/investimento-oro"
     },
     {
-      icon: <Coins className="h-16 w-16 text-toro-gold" />,
+      icon: <Bitcoin className="h-16 w-16 text-toro-gold" />,
       title: "Crypto e Asset Digitali",
       description: "Consulenza specializzata su Bitcoin e asset digitali, dalle basi alla self-custody avanzata, per integrare responsabilmente questa nuova classe di attività nel tuo portafoglio.",
       benefits: [

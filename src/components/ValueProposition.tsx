@@ -1,11 +1,17 @@
 
 import React from 'react';
-import { Link2Off, Target, LineChart, BookOpen } from 'lucide-react';
+import { Target, LineChart, BookOpen } from 'lucide-react';
 
 const ValueProposition = () => {
   const values = [
     {
-      icon: <Link2Off className="h-12 w-12 text-toro-gold" />,
+      icon: (
+        <svg className="h-12 w-12 text-toro-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M10 10.5c-.8-.3-1.5-.8-2-1.3-1.4-1.4-1.4-3.6 0-5 1.4-1.4 3.6-1.4 5 0 .5.5 1 1.3 1.3 2" />
+          <path d="M14 13.5c.8.3 1.5.8 2 1.3 1.4 1.4 1.4 3.6 0 5-1.4 1.4-3.6 1.4-5 0-.5-.5-1-1.3-1.3-2" />
+          <path d="M16 8L8 16" />
+        </svg>
+      ),
       title: "Indipendenza",
       description: "Nessun legame con banche o prodotti finanziari. Le nostre raccomandazioni sono sempre nel tuo interesse."
     },

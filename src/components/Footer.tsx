@@ -38,7 +38,7 @@ const Footer = () => {
   return (
     <footer className="bg-toro-dark text-white">
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 justify-between">
           <div>
             <div className="flex items-center mb-6">
               <Logo size="large" className="mr-3" />
@@ -68,7 +68,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="pl-4">
+          <div className="pl-8">
             <h3 className="text-lg font-medium mb-6">Collegamenti Rapidi</h3>
             <ul className="space-y-4">
               <li><button onClick={() => handleNavigation('/')} className="text-gray-300 hover:text-toro-gold transition-colors">Home</button></li>
