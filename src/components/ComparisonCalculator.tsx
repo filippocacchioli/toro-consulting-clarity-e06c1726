@@ -14,7 +14,7 @@ const ComparisonCalculator = () => {
   // Constants for fee calculation
   const TRADITIONAL_UPFRONT_FEE = 3; // 3% upfront fee
   const TRADITIONAL_ANNUAL_FEE = 1.8; // 1.8% annual management fee
-  const INDEPENDENT_ANNUAL_FEE = 1.0; // 1.0% annual fee for independent advisor
+  const INDEPENDENT_ANNUAL_FEE = 0.7; // 0.7% annual fee for independent advisor (updated from 1.0%)
   
   useEffect(() => {
     calculateComparison();

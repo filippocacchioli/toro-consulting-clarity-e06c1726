@@ -9,7 +9,7 @@ const Footer = () => {
 
   const handleNavigation = (path: string) => {
     navigate(path);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const handleSectionNavigation = (path: string, sectionId: string) => {
@@ -17,9 +17,9 @@ const Footer = () => {
     if (window.location.pathname === path) {
       const targetElement = document.getElementById(sectionId);
       if (targetElement) {
-        const yOffset = -100; // Adjust for navbar
+        const yOffset = -80; // Adjust for navbar
         const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        window.scrollTo({ top: y, behavior: 'auto' });
       }
     } else {
       // Navigate to the page first, then scroll to section after page load
@@ -27,9 +27,9 @@ const Footer = () => {
       setTimeout(() => {
         const targetElement = document.getElementById(sectionId);
         if (targetElement) {
-          const yOffset = -100;
+          const yOffset = -80;
           const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          window.scrollTo({ top: y, behavior: 'auto' });
         }
       }, 300);
     }
@@ -41,7 +41,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-6">
-              <Logo size="medium" className="mr-3" />
+              <Logo size="large" className="mr-3" />
               <div className="text-xl font-serif font-medium text-white">
                 TORO Consulting
               </div>

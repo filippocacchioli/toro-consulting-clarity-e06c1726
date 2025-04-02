@@ -3,7 +3,6 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Award, BookOpen, Users, Star, Shield, Lightbulb } from 'lucide-react';
-import Logo from '../components/Logo';
 
 const ChiSono = () => {
   return (
@@ -19,10 +18,7 @@ const ChiSono = () => {
                 <p className="text-xl mb-6">
                   "Aiuto le persone come te a raggiungere la libertà finanziaria attraverso piani d'investimento efficaci e trasparenti."
                 </p>
-                <div className="flex items-center">
-                  <Logo size="small" className="mr-3" />
-                  <span className="text-lg font-medium text-toro-gold">TORO Consulting</span>
-                </div>
+                {/* Removed logo and text from here */}
               </div>
               <div className="md:w-1/2 flex justify-center">
                 <div className="relative">
@@ -47,7 +43,7 @@ const ChiSono = () => {
                 <div className="prose max-w-none text-gray-700">
                   <p className="text-lg font-medium mb-6">
                     Sono Filippo Cacchioli, Dirigente d'Azienda innamorato della Finanza: +18 anni di esperienza con forte background in ruoli chiave di Vendita e Operations.
-                    <br />
+                    <br /><br />
                     Forte orientamento alle tematiche Economico/Finanziarie e al Cliente, sono guidato da una mentalità analitica basata su dati e processi.
                   </p>
                   <p className="text-lg font-medium mb-6 bg-toro-gold/10 p-4 border-l-4 border-toro-gold rounded">
@@ -127,9 +123,38 @@ const ChiSono = () => {
             </div>
           </div>
         </section>
+
+        {/* Certificazioni e Affiliazioni */}
+        <section className="py-16 bg-gray-50">
+          <div className="container-custom">
+            <h2 className="text-2xl font-serif text-center font-medium mb-12 text-toro-dark">Certificazioni e Affiliazioni</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-xl font-medium mb-4 text-toro-gold">Certificazioni Professionali</h3>
+                <ul className="space-y-3">
+                  <li className="italic font-serif text-gray-700">Consulente Finanziario Autonomo, iscrizione Albo OCF n°123456</li>
+                  <li className="italic font-serif text-gray-700">Chartered Blockchain Expert (CBX) Level I</li>
+                  <li className="italic font-serif text-gray-700">Certification Program for Blockchain - POLIMI Graduate School of Management</li>
+                  <li className="italic font-serif text-gray-700">Advanced Financial Planning Certification</li>
+                </ul>
+              </div>
+              
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-xl font-medium mb-4 text-toro-gold">Affiliazioni</h3>
+                <ul className="space-y-3">
+                  <li className="italic font-serif text-gray-700">Vigilanza CONSOB - Commissione Nazionale per le Società e la Borsa</li>
+                  <li className="italic font-serif text-gray-700">Membro dell'Associazione Italiana Consulenti Finanziari Indipendenti</li>
+                  <li className="italic font-serif text-gray-700">Alumni POLIMI Graduate School of Management</li>
+                  <li className="italic font-serif text-gray-700">Membro DEC Institute Community</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
         
         {/* Valori */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-white">
           <div className="container-custom">
             <h2 className="section-title text-center mb-16">I Miei Valori</h2>
             

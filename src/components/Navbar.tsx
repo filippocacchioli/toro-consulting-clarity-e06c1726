@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -35,21 +36,21 @@ const Navbar = () => {
     
     // Check if we're already on the path, if so just scroll to top
     if (location.pathname === path) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'auto' });
       return;
     }
     
     // Otherwise navigate and scroll to top
     navigate(path);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 backdrop-blur-md shadow-lg py-3'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-1' : 'bg-white/90 backdrop-blur-md shadow-lg py-2'}`}>
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center" onClick={() => handleNavigation('/')}>
-          <Logo size="large" className="mr-3" />
+          <Logo size="small" className="mr-3" />
           <div className="text-2xl font-serif font-medium">
             <span className="text-toro-dark">TORO</span>
             <span className="text-toro-gold"> Consulting</span>

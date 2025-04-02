@@ -2,7 +2,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Logo from './Logo';
 
 const Hero = () => {
   return (
@@ -12,14 +11,18 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[url('/lovable-uploads/baf54ec7-8ac0-41e5-8b6b-c347ede16ed2.png')] bg-cover bg-center"></div>
       </div>
       
+      {/* Logo background overlay */}
+      <div className="absolute inset-0 flex justify-center items-center z-0 opacity-10">
+        <img 
+          src="/lovable-uploads/a55f00d3-7eb2-4d4b-a54b-90bf6902d2cc.png"
+          alt="TORO Consulting Logo Background"
+          className="w-1/2 max-w-2xl"
+        />
+      </div>
+      
       <div className="container-custom relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-white">
-          <div className="flex items-center mb-8 animate-fade-in">
-            <Logo size="large" className="mr-4" />
-            <h2 className="text-3xl font-serif font-bold text-toro-gold">
-              TORO Consulting
-            </h2>
-          </div>
+          {/* Removed logo and text from here */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
             Diventa Manager del tuo Patrimonio: trasforma i tuoi Risparmi in tuoi Dipendenti.
           </h1>
