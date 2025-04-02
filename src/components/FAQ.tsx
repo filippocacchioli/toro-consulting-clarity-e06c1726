@@ -14,8 +14,8 @@ const FAQ = () => {
       answer: "I consulenti finanziari indipendenti, come noi, offrono consulenze personalizzate senza vendere prodotti finanziari. Veniamo pagati direttamente dai clienti (fee-only) e non riceviamo commissioni da banche o società di prodotto, eliminando così qualsiasi conflitto di interesse. Il nostro unico obiettivo è tutelare al massimo i tuoi interessi e aiutarti a raggiungere i tuoi obiettivi finanziari."
     },
     {
-      question: "Quali sono i vantaggi delle consulenze finanziarie indipendenti?",
-      answer: "I principali vantaggi includono: 1) Totale assenza di conflitti di interesse, 2) Accesso ad analisi oggettive dell'intero mercato e non solo dei prodotti di una singola banca, 3) Piani d'investimento personalizzati basati sui tuoi obiettivi, 4) Maggiore trasparenza sui costi e sui rischi degli investimenti, 5) Consulenze continuative che si adattano al cambiare della tua situazione personale."
+      question: "Qual è il vantaggio della consulenza finanziaria indipendente?",
+      answer: "I principali vantaggi includono: 1) Totale assenza di conflitti di interesse, 2) Accesso ad analisi oggettive dell'intero mercato e non solo dei prodotti di una singola banca, 3) Piano d'investimento personalizzato basato sui tuoi obiettivi, 4) Maggiore trasparenza sui costi e sui rischi degli investimenti, 5) Consulenza continuativa che si adatta al cambiare della tua situazione personale."
     },
     {
       question: "Quanto costano i vostri servizi di consulenza?",
@@ -34,8 +34,8 @@ const FAQ = () => {
       answer: "I consulenti bancari sono dipendenti o agenti di una banca e possono consigliare solo i prodotti della loro banca, spesso percependo commissioni sulla vendita. Noi, come consulenti fee-only, veniamo pagati esclusivamente da te e possiamo consigliarti qualsiasi prodotto disponibile sul mercato, selezionando quelli più efficienti e adatti alle tue esigenze, senza alcun incentivo a preferirne alcuni rispetto ad altri."
     },
     {
-      question: "Cosa dobbiamo portare ai primi appuntamenti?",
-      answer: "Per massimizzare l'efficacia dei primi incontri, è utile portare: 1) Un elenco dei vostri obiettivi finanziari a breve, medio e lungo termine, 2) Gli estratti conto degli ultimi tre mesi dei vostri investimenti attuali, 3) Dettagli sulle vostre entrate e uscite mensili, 4) Informazioni su eventuali debiti (mutui, prestiti), 5) Documenti relativi a polizze assicurative esistenti. Questo ci permetterà di avere un quadro completo delle vostre situazioni finanziarie."
+      question: "Cosa devo portare al primo appuntamento?",
+      answer: "Per massimizzare l'efficacia dei primi incontri, è utile portare: 1) Un elenco dei tuoi obiettivi finanziari a breve, medio e lungo termine, 2) Gli estratti conto degli ultimi tre mesi dei tuoi investimenti attuali, 3) Dettagli sulle tue entrate e uscite mensili, 4) Informazioni su eventuali debiti (mutui, prestiti), 5) Documenti relativi a polizze assicurative esistenti. Questo ci permetterà di avere un quadro completo della tua situazione finanziaria."
     }
   ];
 
