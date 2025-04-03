@@ -6,12 +6,10 @@ const ValueProposition = () => {
     {
       icon: (
         <svg className="h-12 w-12 text-toro-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M6 15l4-4" />
-          <path d="M14 13l4-4" />
-          <circle cx="4.5" cy="16.5" r="2.5" />
-          <circle cx="9.5" cy="11.5" r="2.5" />
-          <circle cx="14.5" cy="11.5" r="2.5" />
-          <circle cx="19.5" cy="6.5" r="2.5" />
+          <path d="M8 12L4 16M4 16V13M4 16H7" />
+          <path d="M16 12L20 8M20 8V11M20 8H17" />
+          <path d="M7 8H5C3.89543 8 3 8.89543 3 10V11" />
+          <path d="M17 16H19C20.1046 16 21 15.1046 21 14V13" />
         </svg>
       ),
       title: "Indipendenza",
