@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Target, LineChart, BookOpen } from 'lucide-react';
 
@@ -7,14 +6,12 @@ const ValueProposition = () => {
     {
       icon: (
         <svg className="h-12 w-12 text-toro-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M18 12h-5" />
-          <path d="M18 9v6" />
-          <path d="M18 15l-3-1.5" />
-          <path d="M18 9l-3 1.5" />
-          <path d="M6 15l3-1.5" />
-          <path d="M6 9l3 1.5" />
-          <path d="M6 12h5" />
-          <path d="M6 9v6" />
+          <path d="M6 15l4-4" />
+          <path d="M14 13l4-4" />
+          <circle cx="4.5" cy="16.5" r="2.5" />
+          <circle cx="9.5" cy="11.5" r="2.5" />
+          <circle cx="14.5" cy="11.5" r="2.5" />
+          <circle cx="19.5" cy="6.5" r="2.5" />
         </svg>
       ),
       title: "Indipendenza",
