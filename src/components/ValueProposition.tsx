@@ -1,22 +1,10 @@
-
 import React from 'react';
-import { Target, LineChart, BookOpen } from 'lucide-react';
+import { Target, LineChart, BookOpen, Unlink } from 'lucide-react';
 
 const ValueProposition = () => {
   const values = [
     {
-      icon: (
-        <svg className="h-12 w-12 text-toro-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M6 14L10 10M14 14L18 10" />
-          <path d="M4 10C3 10 2 9 2 8C2 7 3 6 4 6C5 6 6 7 6 8C6 9 5 10 4 10Z" />
-          <path d="M10 6C9 6 8 5 8 4C8 3 9 2 10 2C11 2 12 3 12 4C12 5 11 6 10 6Z" />
-          <path d="M14 6C13 6 12 5 12 4C12 3 13 2 14 2C15 2 16 3 16 4C16 5 15 6 14 6Z" />
-          <path d="M20 10C19 10 18 9 18 8C18 7 19 6 20 6C21 6 22 7 22 8C22 9 21 10 20 10Z" />
-          <path d="M4 10L2 12L4 14L6 12L4 10Z" />
-          <path d="M20 10L18 12L20 14L22 12L20 10Z" />
-          <path d="M12 14l1 1-1 1-1-1z" />
-        </svg>
-      ),
+      icon: <Unlink className="h-12 w-12 text-toro-gold" />,
       title: "Indipendenza",
       description: "Nessun legame con banche o prodotti finanziari. Le nostre raccomandazioni sono sempre nel tuo interesse."
     },

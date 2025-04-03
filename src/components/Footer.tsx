@@ -1,11 +1,12 @@
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavigation = (path: string) => {
     navigate(path);
@@ -14,7 +15,7 @@ const Footer = () => {
 
   const handleSectionNavigation = (path: string, sectionId: string) => {
     // If we're already on the page, just scroll to the section
-    if (window.location.pathname === path) {
+    if (location.pathname === path) {
       const targetElement = document.getElementById(sectionId);
       if (targetElement) {
         const yOffset = -80; // Adjust for navbar
@@ -23,7 +24,7 @@ const Footer = () => {
       }
     } else {
       // Navigate to the page first, then scroll to section after page load
-      navigate(path);
+      navigate(`${path}#${sectionId}`);
       setTimeout(() => {
         const targetElement = document.getElementById(sectionId);
         if (targetElement) {
