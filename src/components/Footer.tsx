@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Logo from './Logo';
@@ -12,41 +13,50 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
+  // A completely new approach for section navigation
   const handleSectionNavigation = (path: string, sectionId: string) => {
-    // If we're already on the page, just scroll to the section
+    // Create a custom event for this specific section navigation
+    const eventName = `scrollTo-${sectionId}`;
+    
+    // If already on the target page, scroll directly
     if (location.pathname === path) {
-      const targetElement = document.getElementById(sectionId);
-      if (targetElement) {
-        const yOffset = -100; // Adjust for navbar
-        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
+      scrollToSection(sectionId);
     } else {
-      // Navigate to the page first, then scroll to section after page load
-      // Store the target section ID in sessionStorage before navigation
-      sessionStorage.setItem('scrollToSection', sectionId);
+      // Set a flag in localStorage (more reliable than sessionStorage)
+      localStorage.setItem('pendingScroll', sectionId);
+      // Navigate to the page - useEffect will handle the scroll
       navigate(path);
     }
   };
 
+  // Function to scroll to a specific section with proper offset
+  const scrollToSection = (sectionId: string) => {
+    // Use a longer timeout to ensure the DOM is fully ready
+    setTimeout(() => {
+      const targetElement = document.getElementById(sectionId);
+      if (targetElement) {
+        const yOffset = -120; // Extra offset to ensure the section is fully visible
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        console.log(`Scrolled to section: ${sectionId} at position ${y}`);
+      } else {
+        console.log(`Section ${sectionId} not found in the DOM`);
+      }
+    }, 800); // Longer delay to ensure page is fully rendered
+  };
+
   // Check for stored section ID on page load and scroll if needed
   useEffect(() => {
-    const sectionId = sessionStorage.getItem('scrollToSection');
-    if (sectionId) {
-      // Clear the stored value
-      sessionStorage.removeItem('scrollToSection');
+    const pendingScroll = localStorage.getItem('pendingScroll');
+    
+    if (pendingScroll) {
+      // Clear the stored value immediately to prevent unwanted scrolling
+      localStorage.removeItem('pendingScroll');
       
-      // Delay to ensure page is fully rendered
-      setTimeout(() => {
-        const targetElement = document.getElementById(sectionId);
-        if (targetElement) {
-          const yOffset = -100;
-          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      }, 500); // Increased timeout to give more time for the page to fully render
+      // Scroll to the section
+      scrollToSection(pendingScroll);
     }
-  }, [location.pathname]);
+  }, [location.pathname]); // This will run each time the pathname changes
 
   return (
     <footer className="bg-toro-dark text-white">

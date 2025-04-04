@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -7,41 +6,28 @@ import { Link } from 'react-router-dom';
 
 const Servizi = () => {
   useEffect(() => {
-    // Add smooth scrolling with offset to account for the fixed navbar
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
-        e.preventDefault();
-        const targetId = target.getAttribute('href')?.slice(1);
-        const targetElement = document.getElementById(targetId || '');
-        
-        if (targetElement) {
-          const yOffset = -100; // Adjust this value to account for the navbar height
-          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      }
-    };
-
-    document.addEventListener('click', handleAnchorClick);
+    // Add logging to help with debugging
+    console.log("Servizi page mounted");
     
     // Handle direct navigation to a hash URL
     if (window.location.hash) {
+      const targetId = window.location.hash.slice(1);
+      console.log(`Found hash in URL: #${targetId}`);
+      
       setTimeout(() => {
-        const targetId = window.location.hash.slice(1);
         const targetElement = document.getElementById(targetId || '');
         
         if (targetElement) {
+          console.log(`Found element with id ${targetId}, scrolling to it`);
           const yOffset = -100;
           const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
+        } else {
+          console.log(`Element with id ${targetId} not found`);
         }
-      }, 500);
+      }, 800);
     }
     
-    return () => {
-      document.removeEventListener('click', handleAnchorClick);
-    };
   }, []);
   
   const services = [
@@ -56,7 +42,8 @@ const Servizi = () => {
         "Pianificazione successoria e protezione patrimoniale",
         "Aggiornamenti regolari e revisione degli obiettivi"
       ],
-      link: "/servizi/pianificazione-patrimoniale"
+      link: "/servizi/pianificazione-patrimoniale",
+      id: "pianificazione"
     },
     {
       icon: <LineChart className="h-16 w-16 text-toro-gold" />,
@@ -69,7 +56,8 @@ const Servizi = () => {
         "Minimizzazione dell'impatto fiscale",
         "Reportistica trasparente e monitoraggio continuo"
       ],
-      link: "/servizi/gestione-portafogli"
+      link: "/servizi/gestione-portafogli",
+      id: "gestione"
     },
     {
       icon: (
@@ -88,7 +76,8 @@ const Servizi = () => {
         "Soluzioni per la custodia sicura e l'assicurazione",
         "Ottimizzazione fiscale per gli investimenti in metalli preziosi"
       ],
-      link: "/servizi/investimento-oro"
+      link: "/servizi/investimento-oro",
+      id: "oro"
     },
     {
       icon: <Bitcoin className="h-16 w-16 text-toro-gold" />,
@@ -101,7 +90,8 @@ const Servizi = () => {
         "Gestione fiscale compliant delle criptovalute",
         "Analisi delle opportunità nel web3 e DeFi"
       ],
-      link: "/servizi/crypto-asset-digitali"
+      link: "/servizi/crypto-asset-digitali",
+      id: "crypto"
     },
     {
       icon: <BookOpen className="h-16 w-16 text-toro-gold" />,
@@ -114,7 +104,8 @@ const Servizi = () => {
         "Workshop interattivi per piccoli gruppi",
         "Aggiornamenti regolari sulle novità dei mercati finanziari"
       ],
-      link: "/servizi/educazione-coaching"
+      link: "/servizi/educazione-coaching",
+      id: "educazione"
     }
   ];
 
@@ -225,7 +216,7 @@ const Servizi = () => {
               {services.map((service, index) => (
                 <div 
                   key={index} 
-                  id={service.title.toLowerCase().split(' ')[0]}
+                  id={service.id}
                   className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}
                 >
                   <div className="md:w-1/3 flex justify-center">
