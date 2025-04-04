@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -8,8 +9,8 @@ const ChiSono = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-toro-dark to-toro-dark-light text-white">
+        {/* Hero Section - Adjusted padding-top to prevent photo from being cut by navbar */}
+        <section className="py-24 bg-gradient-to-b from-toro-dark to-toro-dark-light text-white">
           <div className="container-custom">
             <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="md:w-1/2">
@@ -19,7 +20,7 @@ const ChiSono = () => {
                 </p>
               </div>
               <div className="md:w-1/2 flex justify-center">
-                <div className="relative">
+                <div className="relative mt-8 md:mt-0">
                   <div className="absolute -inset-0.5 bg-toro-gold rounded-full blur"></div>
                   <img 
                     src="/lovable-uploads/b675c65e-06b1-425f-b5f8-c63e4e322f59.png" 

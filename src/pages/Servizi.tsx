@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -21,13 +22,34 @@ const Servizi = () => {
           console.log(`Found element with id ${targetId}, scrolling to it`);
           const yOffset = -100;
           const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          window.scrollTo({ top: y, behavior: 'instant' });
         } else {
           console.log(`Element with id ${targetId} not found`);
         }
-      }, 800);
+      }, 300);
     }
     
+    // Check for stored target in localStorage for direct navigation
+    const scrollTarget = localStorage.getItem('scrollTarget');
+    if (scrollTarget) {
+      localStorage.removeItem('scrollTarget');
+      
+      requestAnimationFrame(() => {
+        const element = document.getElementById(scrollTarget);
+        if (element) {
+          // Use a smaller offset for the "oro" section specifically
+          const headerOffset = scrollTarget === 'oro' ? 140 : 120;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'instant'
+          });
+          console.log(`Scrolled to section: ${scrollTarget} with adjusted offset`);
+        }
+      });
+    }
   }, []);
   
   const services = [

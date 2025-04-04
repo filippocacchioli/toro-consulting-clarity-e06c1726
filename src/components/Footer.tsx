@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Logo from './Logo';
@@ -13,50 +12,56 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
-  // A completely new approach for section navigation
+  // Completely redesigned section navigation for immediate scrolling
   const handleSectionNavigation = (path: string, sectionId: string) => {
-    // Create a custom event for this specific section navigation
-    const eventName = `scrollTo-${sectionId}`;
-    
-    // If already on the target page, scroll directly
+    // If already on the target page, scroll directly and instantly
     if (location.pathname === path) {
-      scrollToSection(sectionId);
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Calculate position with offset to prevent header overlap
+        const headerOffset = 120;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        // Use instant scrolling for immediate result without animation
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'instant'
+        });
+      }
     } else {
-      // Set a flag in localStorage (more reliable than sessionStorage)
-      localStorage.setItem('pendingScroll', sectionId);
-      // Navigate to the page - useEffect will handle the scroll
+      // If navigating to another page, store target in localStorage
+      localStorage.setItem('scrollTarget', sectionId);
       navigate(path);
     }
   };
 
-  // Function to scroll to a specific section with proper offset
-  const scrollToSection = (sectionId: string) => {
-    // Use a longer timeout to ensure the DOM is fully ready
-    setTimeout(() => {
-      const targetElement = document.getElementById(sectionId);
-      if (targetElement) {
-        const yOffset = -120; // Extra offset to ensure the section is fully visible
-        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-        console.log(`Scrolled to section: ${sectionId} at position ${y}`);
-      } else {
-        console.log(`Section ${sectionId} not found in the DOM`);
-      }
-    }, 800); // Longer delay to ensure page is fully rendered
-  };
-
-  // Check for stored section ID on page load and scroll if needed
+  // Check for stored section ID on page load and scroll instantly if needed
   useEffect(() => {
-    const pendingScroll = localStorage.getItem('pendingScroll');
+    const scrollTarget = localStorage.getItem('scrollTarget');
     
-    if (pendingScroll) {
-      // Clear the stored value immediately to prevent unwanted scrolling
-      localStorage.removeItem('pendingScroll');
+    if (scrollTarget) {
+      // Clear the stored value immediately
+      localStorage.removeItem('scrollTarget');
       
-      // Scroll to the section
-      scrollToSection(pendingScroll);
+      // Use requestAnimationFrame for better timing after page load
+      requestAnimationFrame(() => {
+        const element = document.getElementById(scrollTarget);
+        if (element) {
+          // Calculate position with offset
+          const headerOffset = 120;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          // Use instant scrolling
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'instant'
+          });
+        }
+      });
     }
-  }, [location.pathname]); // This will run each time the pathname changes
+  }, [location.pathname]);
 
   return (
     <footer className="bg-toro-dark text-white">
@@ -85,7 +90,7 @@ const Footer = () => {
               </a>
               <a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-toro-gold transition-colors">
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849.149 3.225-1.664 4.771-4.919 4.919-1.266.058 1.644-.07 4.849-.07 3.204 0 3.584-.012 4.849-.07 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.204.013-3.583.07-4.849-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
                 </svg>
               </a>
             </div>
