@@ -8,7 +8,7 @@ interface LogoProps {
 
 const Logo = ({ size = 'medium', className = '' }: LogoProps) => {
   const sizes = {
-    small: 'h-10 w-10',    // Increased from h-8 w-8
+    small: 'h-12 w-12',    // Increased from h-10 w-10
     medium: 'h-14 w-14',   // Keep medium size the same
     large: 'h-28 w-28'     // Keep large size the same
   };

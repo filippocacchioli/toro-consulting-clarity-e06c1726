@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Logo from './Logo';
@@ -16,20 +15,17 @@ const Footer = () => {
   const handleSectionNavigation = (path: string, sectionId: string) => {
     // If we're already on the page, just scroll to the section
     if (location.pathname === path) {
-      setTimeout(() => {
-        const targetElement = document.getElementById(sectionId);
-        if (targetElement) {
-          const yOffset = -100; // Adjust for navbar
-          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      }, 100);
+      const targetElement = document.getElementById(sectionId);
+      if (targetElement) {
+        const yOffset = -100; // Adjust for navbar
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
     } else {
       // Navigate to the page first, then scroll to section after page load
-      navigate(`${path}`);
-      
-      // Store the target section ID in sessionStorage
+      // Store the target section ID in sessionStorage before navigation
       sessionStorage.setItem('scrollToSection', sectionId);
+      navigate(path);
     }
   };
 
@@ -40,7 +36,7 @@ const Footer = () => {
       // Clear the stored value
       sessionStorage.removeItem('scrollToSection');
       
-      // Delay to ensure page is fully loaded
+      // Delay to ensure page is fully rendered
       setTimeout(() => {
         const targetElement = document.getElementById(sectionId);
         if (targetElement) {
@@ -48,7 +44,7 @@ const Footer = () => {
           const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
-      }, 300);
+      }, 500); // Increased timeout to give more time for the page to fully render
     }
   }, [location.pathname]);
 
