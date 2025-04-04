@@ -20,7 +20,8 @@ const Servizi = () => {
         
         if (targetElement) {
           console.log(`Found element with id ${targetId}, scrolling to it`);
-          const yOffset = -100;
+          // Use a larger offset for better positioning
+          const yOffset = -150;
           const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'instant' });
         } else {
@@ -37,8 +38,9 @@ const Servizi = () => {
       requestAnimationFrame(() => {
         const element = document.getElementById(scrollTarget);
         if (element) {
-          // Use a smaller offset for the "oro" section specifically
-          const headerOffset = scrollTarget === 'oro' ? 140 : 120;
+          // Increase the headerOffset specifically for the "oro" section
+          // This will position the view higher up so the title is fully visible
+          const headerOffset = scrollTarget === 'oro' ? 180 : 120;
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
           
@@ -46,7 +48,7 @@ const Servizi = () => {
             top: offsetPosition,
             behavior: 'instant'
           });
-          console.log(`Scrolled to section: ${scrollTarget} with adjusted offset`);
+          console.log(`Scrolled to section: ${scrollTarget} with adjusted offset ${headerOffset}px`);
         }
       });
     }
