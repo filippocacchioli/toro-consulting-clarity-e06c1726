@@ -20,10 +20,28 @@ const Servizi = () => {
         
         if (targetElement) {
           console.log(`Found element with id ${targetId}, scrolling to it`);
-          // Use a larger offset for better positioning
-          const yOffset = -150;
-          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'instant' });
+          
+          // Create an improved offset calculation based on the section
+          // Make offset larger for better visibility of section headings
+          const getOffset = (id) => {
+            const navbarHeight = 80; // Approximate height of navbar
+            const additionalOffset = 100; // Additional offset for better positioning
+            
+            // Custom offsets for specific sections that need more space
+            if (id === 'oro') return navbarHeight + 120;
+            return navbarHeight + additionalOffset;
+          };
+          
+          const offset = getOffset(targetId);
+          const y = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+          
+          // Use the scrollIntoView method with custom alignment
+          window.scrollTo({
+            top: y,
+            behavior: 'instant'
+          });
+          
+          console.log(`Scrolled to section: ${targetId} with offset ${offset}px`);
         } else {
           console.log(`Element with id ${targetId} not found`);
         }
@@ -38,17 +56,25 @@ const Servizi = () => {
       requestAnimationFrame(() => {
         const element = document.getElementById(scrollTarget);
         if (element) {
-          // Increase the headerOffset specifically for the "oro" section
-          // This will position the view higher up so the title is fully visible
-          const headerOffset = scrollTarget === 'oro' ? 180 : 120;
+          // Create an improved offset calculation function
+          const getOffset = (id) => {
+            const navbarHeight = 80; // Approximate height of navbar
+            const additionalOffset = 100; // Additional offset for better positioning
+            
+            // Custom offsets for specific sections
+            if (id === 'oro') return navbarHeight + 120;
+            return navbarHeight + additionalOffset;
+          };
+          
+          const offset = getOffset(scrollTarget);
           const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
           
           window.scrollTo({
             top: offsetPosition,
             behavior: 'instant'
           });
-          console.log(`Scrolled to section: ${scrollTarget} with adjusted offset ${headerOffset}px`);
+          console.log(`Scrolled to section: ${scrollTarget} with offset ${offset}px`);
         }
       });
     }
@@ -137,8 +163,8 @@ const Servizi = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
+        {/* Hero Section - update to vertically center content */}
+        <section className="py-24 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white flex items-center min-h-[400px]">
           <div className="container-custom text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">I Nostri Servizi</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
@@ -241,7 +267,7 @@ const Servizi = () => {
                 <div 
                   key={index} 
                   id={service.id}
-                  className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}
+                  className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center pt-20`}
                 >
                   <div className="md:w-1/3 flex justify-center">
                     <div className="bg-white p-8 rounded-full shadow-xl">
