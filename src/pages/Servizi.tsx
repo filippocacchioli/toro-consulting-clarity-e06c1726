@@ -15,18 +15,9 @@ const Servizi = () => {
       const targetId = window.location.hash.slice(1);
       console.log(`Found hash in URL: #${targetId}`);
       
+      // Delayed execution to ensure the DOM is fully loaded
       setTimeout(() => {
-        const targetElement = document.getElementById(targetId || '');
-        
-        if (targetElement) {
-          console.log(`Found element with id ${targetId}, scrolling to it`);
-          // Use a larger offset for better positioning
-          const yOffset = -150;
-          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'instant' });
-        } else {
-          console.log(`Element with id ${targetId} not found`);
-        }
+        scrollToSection(targetId);
       }, 300);
     }
     
@@ -34,25 +25,34 @@ const Servizi = () => {
     const scrollTarget = localStorage.getItem('scrollTarget');
     if (scrollTarget) {
       localStorage.removeItem('scrollTarget');
-      
-      requestAnimationFrame(() => {
-        const element = document.getElementById(scrollTarget);
-        if (element) {
-          // Increase the headerOffset specifically for the "oro" section
-          // This will position the view higher up so the title is fully visible
-          const headerOffset = scrollTarget === 'oro' ? 180 : 120;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'instant'
-          });
-          console.log(`Scrolled to section: ${scrollTarget} with adjusted offset ${headerOffset}px`);
-        }
-      });
+      scrollToSection(scrollTarget);
     }
   }, []);
+  
+  // Improved scroll function that provides better positioning
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Use a consistent and larger offset to ensure titles are fully visible
+      const headerOffset = 200;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'instant'
+      });
+      console.log(`Scrolled to section: ${sectionId} with offset ${headerOffset}px`);
+    } else {
+      console.log(`Element with id ${sectionId} not found`);
+    }
+  };
+  
+  // Handle anchor link clicks with smoothScroll
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    scrollToSection(targetId);
+  };
   
   const services = [
     {
@@ -137,8 +137,8 @@ const Servizi = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
+        {/* Hero Section - Vertically centered text */}
+        <section className="py-24 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white flex items-center">
           <div className="container-custom text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">I Nostri Servizi</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
@@ -146,22 +146,46 @@ const Servizi = () => {
               studiati per supportarti in ogni aspetto della tua vita finanziaria.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-10">
-              <a href="#pianificazione" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              <a 
+                href="#pianificazione" 
+                onClick={(e) => handleAnchorClick(e, "pianificazione")}
+                className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors"
+              >
                 Pianificazione
               </a>
-              <a href="#gestione" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              <a 
+                href="#gestione" 
+                onClick={(e) => handleAnchorClick(e, "gestione")}
+                className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors"
+              >
                 Gestione
               </a>
-              <a href="#oro" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              <a 
+                href="#oro" 
+                onClick={(e) => handleAnchorClick(e, "oro")}
+                className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors"
+              >
                 Oro
               </a>
-              <a href="#crypto" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              <a 
+                href="#crypto" 
+                onClick={(e) => handleAnchorClick(e, "crypto")}
+                className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors"
+              >
                 Crypto
               </a>
-              <a href="#educazione" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              <a 
+                href="#educazione" 
+                onClick={(e) => handleAnchorClick(e, "educazione")}
+                className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors"
+              >
                 Educazione
               </a>
-              <a href="#fee" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              <a 
+                href="#fee" 
+                onClick={(e) => handleAnchorClick(e, "fee")}
+                className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors"
+              >
                 Fee
               </a>
             </div>
@@ -241,7 +265,7 @@ const Servizi = () => {
                 <div 
                   key={index} 
                   id={service.id}
-                  className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}
+                  className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center pt-16`}
                 >
                   <div className="md:w-1/3 flex justify-center">
                     <div className="bg-white p-8 rounded-full shadow-xl">
@@ -276,7 +300,7 @@ const Servizi = () => {
         </section>
 
         {/* Fee Section */}
-        <section id="fee" className="py-20 bg-white">
+        <section id="fee" className="py-20 bg-white pt-36">
           <div className="container-custom">
             <h2 className="section-title text-center mb-8">Le Nostre Fee</h2>
             <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12">
