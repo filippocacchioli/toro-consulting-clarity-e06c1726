@@ -93,8 +93,8 @@ const Blog = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
+        {/* Hero Section - Adjusted with more padding-top */}
+        <section className="py-32 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
           <div className="container-custom text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Diventa un Investitore Consapevole</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
