@@ -95,7 +95,7 @@ const Blog = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
-          <div className="container-custom text-center">
+          <div className="container-custom text-center pt-8">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Diventa un Investitore Consapevole</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
               Articoli, guide e risorse per aiutarti a prendere decisioni finanziarie più informate
