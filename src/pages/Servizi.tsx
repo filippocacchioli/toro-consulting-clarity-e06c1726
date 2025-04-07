@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -38,9 +37,8 @@ const Servizi = () => {
       requestAnimationFrame(() => {
         const element = document.getElementById(scrollTarget);
         if (element) {
-          // Increase the headerOffset specifically for the "oro" section
-          // This will position the view higher up so the title is fully visible
-          const headerOffset = scrollTarget === 'oro' ? 180 : 120;
+          // Increase the headerOffset to ensure the section title is fully visible
+          const headerOffset = 150;
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
           
@@ -133,37 +131,52 @@ const Servizi = () => {
     }
   ];
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Add larger offset to ensure the section title is fully visible
+      const headerOffset = 150;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
+        {/* Hero Section with lower title */}
+        <section className="py-28 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
           <div className="container-custom text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">I Nostri Servizi</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6 mt-8">I Nostri Servizi</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
               Offriamo una gamma completa di servizi di consulenza finanziaria indipendente, 
               studiati per supportarti in ogni aspetto della tua vita finanziaria.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-10">
-              <a href="#pianificazione" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              <button onClick={() => scrollToSection('pianificazione')} className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
                 Pianificazione
-              </a>
-              <a href="#gestione" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              </button>
+              <button onClick={() => scrollToSection('gestione')} className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
                 Gestione
-              </a>
-              <a href="#oro" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              </button>
+              <button onClick={() => scrollToSection('oro')} className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
                 Oro
-              </a>
-              <a href="#crypto" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              </button>
+              <button onClick={() => scrollToSection('crypto')} className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
                 Crypto
-              </a>
-              <a href="#educazione" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              </button>
+              <button onClick={() => scrollToSection('educazione')} className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
                 Educazione
-              </a>
-              <a href="#fee" className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
+              </button>
+              <button onClick={() => scrollToSection('fee')} className="px-6 py-3 bg-white/10 hover:bg-toro-gold/80 rounded-full transition-colors">
                 Fee
-              </a>
+              </button>
             </div>
           </div>
         </section>

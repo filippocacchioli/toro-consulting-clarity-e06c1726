@@ -31,11 +31,30 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
-  const handleNavigation = (path: string) => {
+  const handleNavigation = (path: string, hash?: string) => {
     closeMenu();
     
+    if (hash && location.pathname === path) {
+      // We're already on the right page, just need to scroll to the right section
+      const element = document.getElementById(hash);
+      if (element) {
+        // Adjust scroll position to account for header height
+        const navbarHeight = 100; // Approximate navbar height plus some padding
+        const yOffset = -navbarHeight;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+      return;
+    }
+    
+    // Different page, navigate there first
+    if (hash) {
+      // Store the hash target in localStorage so we can scroll to it after navigation
+      localStorage.setItem('scrollTarget', hash);
+    }
+    
     // Check if we're already on the path, if so just scroll to top
-    if (location.pathname === path) {
+    if (location.pathname === path && !hash) {
       window.scrollTo({ top: 0, behavior: 'instant' });
       return;
     }

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -44,9 +45,9 @@ const Contatti = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <section className="py-20 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
+        <section className="py-28 bg-gradient-to-r from-toro-dark to-toro-dark-light text-white">
           <div className="container-custom text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Contattaci</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6 mt-8">Contattaci</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
               Avete domande sulla vostra situazione finanziaria? Siamo qui per aiutarvi.
               Compilate il modulo sottostante o contattateci direttamente.
