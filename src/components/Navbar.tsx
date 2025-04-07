@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -42,30 +43,6 @@ const Navbar = () => {
     // Otherwise navigate and scroll to top
     navigate(path);
     window.scrollTo({ top: 0, behavior: 'instant' });
-  };
-
-  const handleServiceNavigation = (path: string, sectionId: string) => {
-    closeMenu();
-    
-    // If we're already on the services page, scroll to the section
-    if (location.pathname === path) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const headerOffset = 200;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'instant'
-        });
-      }
-      return;
-    }
-    
-    // Otherwise navigate to the page and set localStorage to scroll after navigation
-    localStorage.setItem('scrollTarget', sectionId);
-    navigate(path);
   };
 
   return (
