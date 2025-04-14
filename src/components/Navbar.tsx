@@ -118,14 +118,14 @@ const Navbar = () => {
                   </button>
                 </div>
                 <div className="flex flex-col space-y-6 p-8">
-                  <button onClick={() => handleNavigation('/')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Home</button>
-                  <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Chi Sono</button>
-                  <button onClick={() => handleNavigation('/servizi')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Servizi</button>
-                  <button onClick={() => handleNavigation('/blog')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Blog</button>
-                  <button onClick={() => handleNavigation('/calcolatore-risparmio')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors flex items-center">
+                  <button onClick={() => handleNavigation('/')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors text-center">Home</button>
+                  <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors text-center">Chi Sono</button>
+                  <button onClick={() => handleNavigation('/servizi')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors text-center">Servizi</button>
+                  <button onClick={() => handleNavigation('/blog')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors text-center">Blog</button>
+                  <button onClick={() => handleNavigation('/calcolatore-risparmio')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors flex items-center justify-center">
                     <Calculator className="w-5 h-5 mr-2" /> Calcolatore
                   </button>
-                  <button onClick={() => handleNavigation('/contatti')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Contatti</button>
+                  <button onClick={() => handleNavigation('/contatti')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors text-center">Contatti</button>
                   <button onClick={() => handleNavigation('/contatti')} className="bg-toro-gold text-white text-center px-6 py-3 rounded-md hover:bg-toro-gold-light transition-colors mt-4">Consulenza Gratuita</button>
                 </div>
               </SheetContent>

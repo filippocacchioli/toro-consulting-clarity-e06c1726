@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import { Calculator, Home, DollarSign, Baby, GraduationCap, Briefcase } from 'lucide-react';
+import React from 'react';
+import { Calculator, Home, DollarSign, Baby, GraduationCap, Briefcase, PiggyBank } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import MortgageCalculator from './MortgageCalculator';
 import FamilyBudgetCalculator from './FamilyBudgetCalculator';
@@ -9,6 +9,7 @@ import ChildCostCalculator from './ChildCostCalculator';
 import LoanAmountCalculator from './LoanAmountCalculator';
 import PersonalLoanCalculator from './PersonalLoanCalculator';
 import FinancialCalculator from './FinancialCalculator';
+import ComparisonCalculator from '../ComparisonCalculator';
 
 const CalculatorsHub = () => {
   return (
@@ -27,29 +28,33 @@ const CalculatorsHub = () => {
               <Home className="h-6 w-6 mb-2" />
               <span className="text-sm">Budget Familiare</span>
             </TabsTrigger>
+            <TabsTrigger value="compound" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
+              <Calculator className="h-6 w-6 mb-2" />
+              <span className="text-sm">Crescita Patrimoniale</span>
+            </TabsTrigger>
             <TabsTrigger value="mortgage" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
               <DollarSign className="h-6 w-6 mb-2" />
               <span className="text-sm">Rata Mutuo</span>
-            </TabsTrigger>
-            <TabsTrigger value="baby" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
-              <Baby className="h-6 w-6 mb-2" />
-              <span className="text-sm">Costi Bebè</span>
             </TabsTrigger>
             <TabsTrigger value="child" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
               <GraduationCap className="h-6 w-6 mb-2" />
               <span className="text-sm">Costi Figlio</span>
             </TabsTrigger>
-            <TabsTrigger value="loan-amount" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
-              <Home className="h-6 w-6 mb-2" />
-              <span className="text-sm">Capitale Finanziabile</span>
+            <TabsTrigger value="baby" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
+              <Baby className="h-6 w-6 mb-2" />
+              <span className="text-sm">Costi Bebè</span>
             </TabsTrigger>
             <TabsTrigger value="personal-loan" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
               <Briefcase className="h-6 w-6 mb-2" />
               <span className="text-sm">Prestito Personale</span>
             </TabsTrigger>
-            <TabsTrigger value="compound" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
-              <Calculator className="h-6 w-6 mb-2" />
-              <span className="text-sm">Crescita Patrimoniale</span>
+            <TabsTrigger value="loan-amount" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
+              <Home className="h-6 w-6 mb-2" />
+              <span className="text-sm">Capitale Finanziabile</span>
+            </TabsTrigger>
+            <TabsTrigger value="savings-comparison" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
+              <PiggyBank className="h-6 w-6 mb-2" />
+              <span className="text-sm">Risparmio Consulente</span>
             </TabsTrigger>
           </TabsList>
 
@@ -57,23 +62,26 @@ const CalculatorsHub = () => {
             <TabsContent value="budget">
               <FamilyBudgetCalculator />
             </TabsContent>
+            <TabsContent value="compound">
+              <FinancialCalculator />
+            </TabsContent>
             <TabsContent value="mortgage">
               <MortgageCalculator />
-            </TabsContent>
-            <TabsContent value="baby">
-              <BabyExpenseCalculator />
             </TabsContent>
             <TabsContent value="child">
               <ChildCostCalculator />
             </TabsContent>
-            <TabsContent value="loan-amount">
-              <LoanAmountCalculator />
+            <TabsContent value="baby">
+              <BabyExpenseCalculator />
             </TabsContent>
             <TabsContent value="personal-loan">
               <PersonalLoanCalculator />
             </TabsContent>
-            <TabsContent value="compound">
-              <FinancialCalculator />
+            <TabsContent value="loan-amount">
+              <LoanAmountCalculator />
+            </TabsContent>
+            <TabsContent value="savings-comparison">
+              <ComparisonCalculator />
             </TabsContent>
           </div>
         </Tabs>
