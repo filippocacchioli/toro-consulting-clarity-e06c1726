@@ -23,7 +23,7 @@ const CalculatorsHub = () => {
         </div>
 
         <Tabs defaultValue="budget" className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 bg-transparent">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2 mb-8 bg-transparent">
             {/* 1. Budget Familiare */}
             <TabsTrigger value="budget" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
               <Home className="h-6 w-6 mb-2" />
