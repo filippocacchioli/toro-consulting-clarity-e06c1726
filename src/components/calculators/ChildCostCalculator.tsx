@@ -186,7 +186,7 @@ const ChildCostCalculator = () => {
         <div className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-toro-dark mb-2">
-              Fascia d'età attuale
+              Fascia d&apos;età attuale
             </label>
             <select
               value={selectedAgeGroup}
@@ -288,13 +288,13 @@ const ChildCostCalculator = () => {
           </div>
           
           <div>
-            <p className="text-gray-300 mb-2">Costo totale fino all'età adulta:</p>
+            <p className="text-gray-300 mb-2">Costo totale fino all&apos;età adulta:</p>
             <p className="text-4xl font-serif font-medium text-toro-gold">
               {formatCurrency(totalCostToAdulthood)}
             </p>
             <p className="text-sm text-gray-300 mt-2">
-              Questa stima include i costi dalla fascia d'età attuale fino all'età adulta 
-              {includeUniversity ? ', inclusa l'università' : ', esclusa l'università'}.
+              Questa stima include i costi dalla fascia d&apos;età attuale fino all&apos;età adulta 
+              {includeUniversity ? ", inclusa l'università" : ", esclusa l'università"}.
             </p>
           </div>
           
