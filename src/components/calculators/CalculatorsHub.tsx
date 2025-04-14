@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Calculator, Home, DollarSign, Baby, GraduationCap, Briefcase, PiggyBank } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -30,10 +29,10 @@ const CalculatorsHub = () => {
               <span className="text-sm">Budget Familiare</span>
             </TabsTrigger>
             
-            {/* 2. Crescita Patrimoniale */}
+            {/* 2. Patrimonio */}
             <TabsTrigger value="compound" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
               <Calculator className="h-6 w-6 mb-2" />
-              <span className="text-sm">Crescita Patrimoniale</span>
+              <span className="text-sm">Patrimonio</span>
             </TabsTrigger>
             
             {/* 3. Risparmio Commissioni */}
