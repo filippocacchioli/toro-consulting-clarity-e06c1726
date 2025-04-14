@@ -32,10 +32,18 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    
+    // Prevent body scrolling when menu is open
+    if (!isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+    document.body.style.overflow = '';
   };
 
   const handleNavigation = (path: string, hash?: string) => {
@@ -96,6 +104,7 @@ const Navbar = () => {
           <button onClick={() => handleNavigation('/')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Home</button>
           <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Chi Sono</button>
           <button onClick={() => handleNavigation('/servizi')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Servizi</button>
+          <button onClick={() => handleNavigation('/calcolatori')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Calcolatori</button>
           <button onClick={() => handleNavigation('/blog')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Blog</button>
           <button onClick={() => handleNavigation('/contatti')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Contatti</button>
           <button onClick={() => handleNavigation('/contatti')} className="btn-primary">Consulenza Gratuita</button>
@@ -111,15 +120,41 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Mobile Menu Overlay - Updated with full-screen background */}
+      <div 
+        className={`fixed inset-0 bg-black/70 backdrop-blur-sm z-40 transition-opacity duration-300 ${
+          isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={closeMenu}
+      />
+
       {/* Mobile Menu - Improved for visibility */}
-      <div className={`fixed inset-0 bg-toro-dark z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`} style={{top: '0', paddingTop: '4rem'}}>
-        <div className="flex flex-col space-y-6 p-8">
-          <button onClick={() => handleNavigation('/')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Home</button>
-          <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Chi Sono</button>
-          <button onClick={() => handleNavigation('/servizi')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Servizi</button>
-          <button onClick={() => handleNavigation('/blog')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Blog</button>
-          <button onClick={() => handleNavigation('/contatti')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Contatti</button>
-          <button onClick={() => handleNavigation('/contatti')} className="bg-toro-gold text-white text-center px-6 py-3 rounded-md hover:bg-toro-gold-light transition-colors mt-4">Consulenza Gratuita</button>
+      <div 
+        className={`fixed inset-0 z-50 bg-toro-dark transform transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        } md:hidden`} 
+        style={{top: '0', height: '100vh'}}
+      >
+        <div className="flex flex-col h-full">
+          <div className="flex justify-end p-4">
+            <button 
+              onClick={closeMenu}
+              aria-label="Close menu" 
+              className="text-white p-2"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          
+          <div className="flex flex-col space-y-8 p-8 mt-12">
+            <button onClick={() => handleNavigation('/')} className="font-medium text-2xl text-white hover:text-toro-gold transition-colors">Home</button>
+            <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-2xl text-white hover:text-toro-gold transition-colors">Chi Sono</button>
+            <button onClick={() => handleNavigation('/servizi')} className="font-medium text-2xl text-white hover:text-toro-gold transition-colors">Servizi</button>
+            <button onClick={() => handleNavigation('/calcolatori')} className="font-medium text-2xl text-white hover:text-toro-gold transition-colors">Calcolatori</button>
+            <button onClick={() => handleNavigation('/blog')} className="font-medium text-2xl text-white hover:text-toro-gold transition-colors">Blog</button>
+            <button onClick={() => handleNavigation('/contatti')} className="font-medium text-2xl text-white hover:text-toro-gold transition-colors">Contatti</button>
+            <button onClick={() => handleNavigation('/contatti')} className="bg-toro-gold text-white text-center px-6 py-3 rounded-md hover:bg-toro-gold-light transition-colors mt-4">Consulenza Gratuita</button>
+          </div>
         </div>
       </div>
     </nav>

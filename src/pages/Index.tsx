@@ -5,13 +5,10 @@ import Hero from '../components/Hero';
 import ValueProposition from '../components/ValueProposition';
 import Services from '../components/Services';
 import Differentiator from '../components/Differentiator';
-import FinancialCalculator from '../components/calculators/FinancialCalculator';
-import ComparisonCalculator from '../components/ComparisonCalculator';
 import TestimonialSection from '../components/TestimonialSection';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
-import CalculatorsHub from '../components/calculators/CalculatorsHub';
 import CookieConsent from '../components/CookieConsent';
 
 const Index = () => {
@@ -33,7 +30,6 @@ const Index = () => {
         <Hero />
         <ValueProposition />
         <Differentiator />
-        <CalculatorsHub /> {/* New hub for all calculators */}
         <Services />
         <TestimonialSection />
         <FAQ />

@@ -9,6 +9,7 @@ import ChiSono from "./pages/ChiSono";
 import Servizi from "./pages/Servizi";
 import Blog from "./pages/Blog";
 import Contatti from "./pages/Contatti";
+import Calcolatori from "./pages/Calcolatori";
 import NotFound from "./pages/NotFound";
 
 // Initialize QueryClient for data fetching
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/servizi" element={<Servizi />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contatti" element={<Contatti />} />
+          <Route path="/calcolatori" element={<Calcolatori />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
