@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import { SIDEBAR_COOKIE_NAME, SIDEBAR_COOKIE_MAX_AGE, SIDEBAR_KEYBOARD_SHORTCUT } from "./sidebar-constants";
 
@@ -22,8 +23,11 @@ export function useSidebarState({
   const open = openProp ?? _open;
   
   const setOpen = React.useCallback(
-    (value: boolean | ((value: boolean) => boolean)) => {
-      const openState = typeof value === "function" ? value(open) : value;
+    (value: boolean | ((prevOpen: boolean) => boolean)) => {
+      const openState = typeof value === "function" 
+        ? (value as (prevOpen: boolean) => boolean)(open) 
+        : value;
+        
       if (setOpenProp) {
         setOpenProp(openState);
       } else {
@@ -39,8 +43,8 @@ export function useSidebarState({
   // Helper to toggle the sidebar.
   const toggleSidebar = React.useCallback(() => {
     return isMobile
-      ? setOpenMobile((open) => !open)
-      : setOpen((open) => !open);
+      ? setOpenMobile((prevOpen) => !prevOpen)
+      : setOpen((prevOpen) => !prevOpen);
   }, [isMobile, setOpen, setOpenMobile]);
 
   // Adds a keyboard shortcut to toggle the sidebar.
