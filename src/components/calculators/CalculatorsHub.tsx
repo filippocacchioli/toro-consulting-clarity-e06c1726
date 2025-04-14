@@ -9,7 +9,7 @@ import ChildCostCalculator from './ChildCostCalculator';
 import LoanAmountCalculator from './LoanAmountCalculator';
 import PersonalLoanCalculator from './PersonalLoanCalculator';
 import FinancialCalculator from './FinancialCalculator';
-import ComparisonCalculator from '../ComparisonCalculator';
+import ComparisonCalculator from './ComparisonCalculator';
 
 const CalculatorsHub = () => {
   return (
