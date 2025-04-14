@@ -3,12 +3,15 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Logo from './Logo';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkBackground, setIsDarkBackground] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,9 +22,13 @@ const Navbar = () => {
       }
     };
 
+    // Check if we're on a path with dark background (add more as needed)
+    const isDark = location.pathname === '/' || location.pathname.includes('/dark-background');
+    setIsDarkBackground(isDark);
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -64,8 +71,16 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
+  const navbarClasses = isScrolled 
+    ? 'bg-white shadow-md py-2' 
+    : 'bg-white/90 backdrop-blur-md shadow-lg py-2.5';
+
+  const mobileMenuClasses = isMobile && isDarkBackground 
+    ? 'text-white' 
+    : 'text-toro-dark';
+
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 backdrop-blur-md shadow-lg py-2.5'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navbarClasses}`}>
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center" onClick={() => handleNavigation('/')}>
@@ -96,15 +111,15 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`} style={{top: '0', paddingTop: '4rem'}}>
+      {/* Mobile Menu - Improved for visibility */}
+      <div className={`fixed inset-0 bg-toro-dark z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`} style={{top: '0', paddingTop: '4rem'}}>
         <div className="flex flex-col space-y-6 p-8">
-          <button onClick={() => handleNavigation('/')} className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors">Home</button>
-          <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors">Chi Sono</button>
-          <button onClick={() => handleNavigation('/servizi')} className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors">Servizi</button>
-          <button onClick={() => handleNavigation('/blog')} className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors">Blog</button>
-          <button onClick={() => handleNavigation('/contatti')} className="font-medium text-xl text-toro-dark hover:text-toro-gold transition-colors">Contatti</button>
-          <button onClick={() => handleNavigation('/contatti')} className="btn-primary text-center mt-4">Consulenza Gratuita</button>
+          <button onClick={() => handleNavigation('/')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Home</button>
+          <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Chi Sono</button>
+          <button onClick={() => handleNavigation('/servizi')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Servizi</button>
+          <button onClick={() => handleNavigation('/blog')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Blog</button>
+          <button onClick={() => handleNavigation('/contatti')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Contatti</button>
+          <button onClick={() => handleNavigation('/contatti')} className="bg-toro-gold text-white text-center px-6 py-3 rounded-md hover:bg-toro-gold-light transition-colors mt-4">Consulenza Gratuita</button>
         </div>
       </div>
     </nav>
