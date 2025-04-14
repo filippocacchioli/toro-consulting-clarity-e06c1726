@@ -23,7 +23,7 @@ const CalculatorsHub = () => {
         </div>
 
         <Tabs defaultValue="budget" className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2 mb-8 bg-transparent">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 bg-transparent">
             {/* 1. Budget Familiare */}
             <TabsTrigger value="budget" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
               <Home className="h-6 w-6 mb-2" />
@@ -36,10 +36,10 @@ const CalculatorsHub = () => {
               <span className="text-sm">Crescita Patrimoniale</span>
             </TabsTrigger>
             
-            {/* 3. Risparmio con consulente indipendente */}
+            {/* 3. Risparmio Commissioni */}
             <TabsTrigger value="savings-comparison" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
               <PiggyBank className="h-6 w-6 mb-2" />
-              <span className="text-sm">Risparmio Indipendente</span>
+              <span className="text-sm">Risparmio Commissioni</span>
             </TabsTrigger>
             
             {/* 4. Rate Mutuo */}

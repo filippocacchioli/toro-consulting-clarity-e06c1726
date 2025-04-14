@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Sparkles, ArrowRight } from 'lucide-react';
 
@@ -102,7 +101,7 @@ const ComparisonCalculator = () => {
             <h4 className="text-xl font-medium mb-4">Confronto commissioni</h4>
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span>Consulente tradizionale:</span>
+                <span>Consulente di Banca/Tradizionale:</span>
                 <span className="font-medium">{TRADITIONAL_UPFRONT_FEE}% iniziale + {TRADITIONAL_ANNUAL_FEE}% annuo</span>
               </div>
               <div className="flex justify-between items-center">
