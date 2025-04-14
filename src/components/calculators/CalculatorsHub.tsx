@@ -39,7 +39,7 @@ const CalculatorsHub = () => {
             {/* 3. Risparmio con consulente indipendente */}
             <TabsTrigger value="savings-comparison" className="flex flex-col items-center p-4 data-[state=active]:bg-toro-gold data-[state=active]:text-white">
               <PiggyBank className="h-6 w-6 mb-2" />
-              <span className="text-sm">Risparmio Consulente</span>
+              <span className="text-sm">Risparmio Indipendente</span>
             </TabsTrigger>
             
             {/* 4. Rate Mutuo */}

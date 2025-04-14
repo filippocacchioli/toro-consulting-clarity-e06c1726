@@ -106,7 +106,7 @@ const ComparisonCalculator = () => {
                 <span className="font-medium">{TRADITIONAL_UPFRONT_FEE}% iniziale + {TRADITIONAL_ANNUAL_FEE}% annuo</span>
               </div>
               <div className="flex justify-between items-center">
-                <span>TORO Consulting:</span>
+                <span>Consulente Indipendente:</span>
                 <span className="font-medium">{INDEPENDENT_ANNUAL_FEE}% annuo</span>
               </div>
               <div className="pt-4 border-t border-white/20">
@@ -131,7 +131,7 @@ const ComparisonCalculator = () => {
           </div>
           
           <div>
-            <p className="text-toro-dark/80 mb-2">Costi totali con TORO Consulting:</p>
+            <p className="text-toro-dark/80 mb-2">Costi totali con Consulente Indipendente:</p>
             <p className="text-3xl font-serif font-medium">
               {formatCurrency(independentCosts)}
             </p>

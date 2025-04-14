@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 const CookieConsent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,24 +32,21 @@ const CookieConsent = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-toro-dark text-white p-4 flex flex-col md:flex-row justify-between items-center z-50 animate-fade-in">
       <p className="mb-4 md:mb-0 mr-4">
-        Questo sito utilizza i cookie per migliorare l'esperienza utente. Continuando a navigare, accetti la nostra politica sui cookie.
+        Questo sito utilizza i cookie per migliorare l&apos;esperienza utente. Continuando a navigare, accetti la nostra politica sui cookie.
       </p>
-      <div className="flex space-x-4">
+      <div className="flex flex-wrap justify-center gap-3 w-full md:w-auto">
         <button 
-          className="bg-toro-gold text-white px-4 py-2 rounded hover:bg-toro-gold-light transition-colors"
+          className="bg-toro-gold text-white px-4 py-2 rounded hover:bg-toro-gold-light transition-colors w-full md:w-auto"
           onClick={acceptAll}
         >
           Accetta tutti
         </button>
         <button 
-          className="bg-transparent border border-white text-white px-4 py-2 rounded hover:bg-white/10 transition-colors"
+          className="bg-transparent border border-white text-white px-4 py-2 rounded hover:bg-white/10 transition-colors w-full md:w-auto"
           onClick={acceptNecessary}
         >
           Solo necessari
         </button>
-        <Link to="/cookies" className="text-toro-gold hover:underline flex items-center">
-          Dettagli
-        </Link>
       </div>
     </div>
   );

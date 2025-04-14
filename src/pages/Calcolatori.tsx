@@ -20,7 +20,7 @@ const Calcolatori = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow pt-24">
         <div className="py-12 bg-gray-50">
           <div className="container-custom">
             <h1 className="text-4xl md:text-5xl font-serif text-center mb-4">Strumenti di Calcolo Finanziario</h1>
