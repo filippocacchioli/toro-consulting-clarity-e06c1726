@@ -1,18 +1,17 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Calculator } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkBackground, setIsDarkBackground] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const isMobile = useIsMobile();
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,8 +30,16 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const handleNavigation = (path: string, hash?: string) => {
-    setIsOpen(false);
+    closeMenu();
     
     if (hash && location.pathname === path) {
       // We're already on the right page, just need to scroll to the right section
@@ -68,6 +75,10 @@ const Navbar = () => {
     ? 'bg-white shadow-md py-2' 
     : 'bg-white/90 backdrop-blur-md shadow-lg py-2.5';
 
+  const mobileMenuClasses = isMobile && isDarkBackground 
+    ? 'text-white' 
+    : 'text-toro-dark';
+
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navbarClasses}`}>
       <div className="container-custom flex justify-between items-center">
@@ -86,60 +97,30 @@ const Navbar = () => {
           <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Chi Sono</button>
           <button onClick={() => handleNavigation('/servizi')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Servizi</button>
           <button onClick={() => handleNavigation('/blog')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Blog</button>
-          <button onClick={() => handleNavigation('/calcolatore-risparmio')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors flex items-center">
-            <Calculator className="w-4 h-4 mr-1" /> Calcolatore
-          </button>
           <button onClick={() => handleNavigation('/contatti')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Contatti</button>
           <button onClick={() => handleNavigation('/contatti')} className="btn-primary">Consulenza Gratuita</button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobile ? (
-          <>
-            <button 
-              className="md:hidden text-toro-dark focus:outline-none" 
-              onClick={() => setIsOpen(true)}
-              aria-label="Open menu"
-            >
-              <Menu size={24} />
-            </button>
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetContent 
-                side="right" 
-                className="w-full bg-toro-dark p-0 flex flex-col"
-              >
-                <div className="flex justify-end p-4">
-                  <button 
-                    onClick={() => setIsOpen(false)}
-                    className="text-white hover:text-toro-gold focus:outline-none"
-                    aria-label="Close menu"
-                  >
-                    <X size={24} />
-                  </button>
-                </div>
-                <div className="flex flex-col space-y-6 p-8">
-                  <button onClick={() => handleNavigation('/')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors text-center">Home</button>
-                  <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors text-center">Chi Sono</button>
-                  <button onClick={() => handleNavigation('/servizi')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors text-center">Servizi</button>
-                  <button onClick={() => handleNavigation('/blog')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors text-center">Blog</button>
-                  <button onClick={() => handleNavigation('/calcolatore-risparmio')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors flex items-center justify-center">
-                    <Calculator className="w-5 h-5 mr-2" /> Calcolatore
-                  </button>
-                  <button onClick={() => handleNavigation('/contatti')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors text-center">Contatti</button>
-                  <button onClick={() => handleNavigation('/contatti')} className="bg-toro-gold text-white text-center px-6 py-3 rounded-md hover:bg-toro-gold-light transition-colors mt-4">Consulenza Gratuita</button>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </>
-        ) : (
-          <button 
-            className="md:hidden text-toro-dark focus:outline-none" 
-            onClick={() => setIsOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu size={24} />
-          </button>
-        )}
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden text-toro-dark focus:outline-none" 
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu - Improved for visibility */}
+      <div className={`fixed inset-0 bg-toro-dark z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`} style={{top: '0', paddingTop: '4rem'}}>
+        <div className="flex flex-col space-y-6 p-8">
+          <button onClick={() => handleNavigation('/')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Home</button>
+          <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Chi Sono</button>
+          <button onClick={() => handleNavigation('/servizi')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Servizi</button>
+          <button onClick={() => handleNavigation('/blog')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Blog</button>
+          <button onClick={() => handleNavigation('/contatti')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Contatti</button>
+          <button onClick={() => handleNavigation('/contatti')} className="bg-toro-gold text-white text-center px-6 py-3 rounded-md hover:bg-toro-gold-light transition-colors mt-4">Consulenza Gratuita</button>
+        </div>
       </div>
     </nav>
   );

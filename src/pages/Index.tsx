@@ -5,6 +5,8 @@ import Hero from '../components/Hero';
 import ValueProposition from '../components/ValueProposition';
 import Services from '../components/Services';
 import Differentiator from '../components/Differentiator';
+import FinancialCalculator from '../components/calculators/FinancialCalculator';
+import ComparisonCalculator from '../components/ComparisonCalculator';
 import TestimonialSection from '../components/TestimonialSection';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
@@ -31,7 +33,7 @@ const Index = () => {
         <Hero />
         <ValueProposition />
         <Differentiator />
-        <CalculatorsHub />
+        <CalculatorsHub /> {/* New hub for all calculators */}
         <Services />
         <TestimonialSection />
         <FAQ />

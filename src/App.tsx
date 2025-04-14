@@ -10,7 +10,6 @@ import Servizi from "./pages/Servizi";
 import Blog from "./pages/Blog";
 import Contatti from "./pages/Contatti";
 import NotFound from "./pages/NotFound";
-import CalcolatoreRisparmio from "./pages/CalcolatoreRisparmio";
 
 // Initialize QueryClient for data fetching
 const queryClient = new QueryClient();
@@ -27,7 +26,6 @@ const App = () => (
           <Route path="/servizi" element={<Servizi />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contatti" element={<Contatti />} />
-          <Route path="/calcolatore-risparmio" element={<CalcolatoreRisparmio />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
