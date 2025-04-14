@@ -8,7 +8,17 @@ import { SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabe
 import { SidebarHeader } from "./sidebar-header";
 import { SidebarInput } from "./sidebar-input";
 import { SidebarInset } from "./sidebar-inset";
-import { SidebarMenu, SidebarMenuAction, SidebarMenuBadge, SidebarMenuButton, SidebarMenuItem, SidebarMenuSkeleton, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem } from "./sidebar-menu";
+import { 
+  SidebarMenu, 
+  SidebarMenuItem, 
+  SidebarMenuButton, 
+  SidebarMenuAction, 
+  SidebarMenuBadge, 
+  SidebarMenuSkeleton, 
+  SidebarMenuSub, 
+  SidebarMenuSubButton, 
+  SidebarMenuSubItem 
+} from "./sidebar-menu";
 import { SidebarRail } from "./sidebar-rail";
 import { SidebarSeparator } from "./sidebar-separator";
 import { SidebarTrigger } from "./sidebar-trigger";

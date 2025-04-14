@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Calculator } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -85,6 +86,9 @@ const Navbar = () => {
           <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Chi Sono</button>
           <button onClick={() => handleNavigation('/servizi')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Servizi</button>
           <button onClick={() => handleNavigation('/blog')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Blog</button>
+          <button onClick={() => handleNavigation('/calcolatore-risparmio')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors flex items-center">
+            <Calculator className="w-4 h-4 mr-1" /> Calcolatore
+          </button>
           <button onClick={() => handleNavigation('/contatti')} className="font-medium text-toro-dark hover:text-toro-gold transition-colors">Contatti</button>
           <button onClick={() => handleNavigation('/contatti')} className="btn-primary">Consulenza Gratuita</button>
         </div>
@@ -118,6 +122,9 @@ const Navbar = () => {
                   <button onClick={() => handleNavigation('/chi-sono')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Chi Sono</button>
                   <button onClick={() => handleNavigation('/servizi')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Servizi</button>
                   <button onClick={() => handleNavigation('/blog')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Blog</button>
+                  <button onClick={() => handleNavigation('/calcolatore-risparmio')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors flex items-center">
+                    <Calculator className="w-5 h-5 mr-2" /> Calcolatore
+                  </button>
                   <button onClick={() => handleNavigation('/contatti')} className="font-medium text-xl text-white hover:text-toro-gold transition-colors">Contatti</button>
                   <button onClick={() => handleNavigation('/contatti')} className="bg-toro-gold text-white text-center px-6 py-3 rounded-md hover:bg-toro-gold-light transition-colors mt-4">Consulenza Gratuita</button>
                 </div>
