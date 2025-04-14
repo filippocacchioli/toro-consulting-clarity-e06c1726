@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import { SIDEBAR_COOKIE_NAME, SIDEBAR_COOKIE_MAX_AGE, SIDEBAR_KEYBOARD_SHORTCUT } from "./sidebar-constants";
 
@@ -22,7 +23,7 @@ export function useSidebarState({
   const open = openProp ?? _open;
   
   const setOpen = React.useCallback(
-    (value: boolean | ((value: boolean) => boolean)) => {
+    (value: boolean | ((prevOpen: boolean) => boolean)) => {
       const openState = typeof value === "function" ? value(open) : value;
       if (setOpenProp) {
         setOpenProp(openState);
@@ -40,7 +41,7 @@ export function useSidebarState({
   const toggleSidebar = React.useCallback(() => {
     return isMobile
       ? setOpenMobile((open) => !open)
-      : setOpen((open) => !open);
+      : setOpen((prevOpen) => !prevOpen);  // Fixed the type issue here
   }, [isMobile, setOpen, setOpenMobile]);
 
   // Adds a keyboard shortcut to toggle the sidebar.
